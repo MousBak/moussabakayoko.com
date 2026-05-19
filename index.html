@@ -3,902 +3,2017 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bakayoko Moussa — Data Analyst & BI</title>
+    <title>Bakayoko Moussa | Data Analyst, BI & Analytics Engineering</title>
+    <meta name="description" content="Portfolio de Bakayoko Moussa, Data Analyst / BI Analyst. Projets SQL, Power BI, Python, Machine Learning, Data Quality, reporting automatisé et analytics engineering.">
+    <meta name="author" content="Bakayoko Moussa">
+    <meta property="og:title" content="Bakayoko Moussa | Data Analyst, BI & Analytics Engineering">
+    <meta property="og:description" content="Des projets data orientés impact : reporting automatisé, BI, data quality, segmentation client, ML et pipelines analytiques.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mousbak.github.io/">
+    <meta name="theme-color" content="#0f766e">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --bg: #030712; --bg-secondary: #0b1221; --bg-tertiary: #0f172a;
-            --card: #111827; --card-hover: #1a2333;
-            --border: rgba(255,255,255,0.07); --border-hover: rgba(255,255,255,0.15);
-            --indigo: #6366f1; --indigo-light: #818cf8;
-            --teal: #22d3ee; --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
-            --linkedin: #0a66c2;
-            --text: #f1f5f9; --text-muted: #94a3b8; --text-subtle: #64748b;
-            --radius: 16px; --radius-sm: 10px; --radius-lg: 24px;
-            --shadow: 0 20px 40px rgba(0,0,0,0.4);
-            --shadow-hover: 0 24px 48px rgba(99,102,241,0.15);
-            --transition: 0.25s ease;
-        }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-        h1, h2, h3, h4 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; }
-        a { text-decoration: none; color: inherit; transition: color var(--transition); }
-        button { border: none; cursor: pointer; font-family: inherit; font-weight: 600; border-radius: var(--radius-sm); transition: all var(--transition); }
-        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.85rem 1.5rem; font-size: 0.9rem; font-weight: 600; }
-        .btn-primary { background: linear-gradient(135deg, #6366f1, #818cf8); color: #fff; box-shadow: 0 8px 20px rgba(99,102,241,0.3); }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(99,102,241,0.4); }
-        .btn-secondary { background: transparent; border: 1px solid rgba(255,255,255,0.15); color: var(--text); }
-        .btn-secondary:hover { border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.05); }
-        .btn-linkedin { background: #0a66c2; color: #fff; padding: 1rem 1.8rem; font-size: 0.95rem; }
-        .btn-linkedin:hover { background: #084799; transform: translateY(-2px); }
-        .btn-cv { background: linear-gradient(135deg, #f59e0b, #fbbf24); color: #000; padding: 1rem 1.8rem; font-size: 0.95rem; font-weight: 700; }
-        .btn-cv:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(245,158,11,0.3); }
-        .btn-case { background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.25); color: var(--indigo-light); flex: 1; padding: 0.7rem 1rem; font-size: 0.85rem; }
-        .btn-case:hover { background: var(--indigo); border-color: var(--indigo); color: #fff; }
-        .btn-icon { width: 42px; height: 42px; padding: 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-        .btn-github { background: #24292e; color: #fff; border: 1px solid rgba(255,255,255,0.1); }
-        .btn-github:hover { background: #2e3440; }
-        .btn-report { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25); color: #10b981; }
-        .btn-report:hover { background: rgba(16,185,129,0.2); }
-        .btn-email { background: linear-gradient(135deg, #6366f1, #818cf8); color: #fff; padding: 1rem 1.8rem; font-size: 0.95rem; box-shadow: 0 8px 20px rgba(99,102,241,0.3); }
-        .btn-email:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(99,102,241,0.4); }
-        .btn-phone { background: rgba(34,211,238,0.1); border: 1px solid rgba(34,211,238,0.3); color: #22d3ee; padding: 1rem 1.8rem; font-size: 0.95rem; }
-        .btn-phone:hover { background: rgba(34,211,238,0.18); transform: translateY(-2px); }
-
-        /* NAVBAR */
-        .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(3, 7, 18, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); transition: all var(--transition); }
-        .navbar.scrolled { background: rgba(3, 7, 18, 0.95); border-bottom-color: var(--border-hover); }
-        .navbar-inner { max-width: 1400px; margin: 0 auto; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; }
-        .navbar-brand { display: flex; align-items: center; gap: 0.5rem; font-size: 1.3rem; font-weight: 800; font-family: 'Bricolage Grotesque', sans-serif; }
-        .navbar-brand i { color: var(--indigo); font-size: 1.5rem; }
-        .navbar-links { display: flex; align-items: center; gap: 3rem; list-style: none; }
-        .navbar-links a { font-size: 0.9rem; color: var(--text-muted); position: relative; padding: 0.5rem 0; }
-        .navbar-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--indigo); transition: width var(--transition); }
-        .navbar-links a:hover::after, .navbar-links a.active::after { width: 100%; }
-        .navbar-links a:hover { color: var(--text); }
-        .navbar-cta { display: flex; align-items: center; gap: 1rem; }
-        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 0.35rem; }
-        .hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all var(--transition); }
-        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
-        .hamburger.active span:nth-child(2) { opacity: 0; }
-        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
-        .mobile-menu { display: none; position: fixed; inset: 0; background: var(--bg); z-index: 999; padding: 6rem 5% 2rem; overflow-y: auto; }
-        .mobile-menu.active { display: flex; flex-direction: column; gap: 2rem; }
-        .mobile-menu-links { display: flex; flex-direction: column; gap: 1.5rem; list-style: none; }
-        .mobile-menu-links a { font-size: 1.1rem; color: var(--text-muted); }
-        .mobile-menu-links a:hover { color: var(--text); }
-        @media (max-width: 768px) {
-            .navbar-links { display: none; }
-            .hamburger { display: flex; }
-            .navbar-cta { gap: 0.5rem; }
-            .navbar-cta .btn-secondary { display: none; }
+            --bg: #f7faf9;
+            --surface: #ffffff;
+            --surface-soft: #eef6f4;
+            --ink: #111827;
+            --muted: #526070;
+            --subtle: #7a8794;
+            --line: #d9e3df;
+            --line-strong: #b7c8c2;
+            --teal: #0f766e;
+            --teal-dark: #0b5f59;
+            --blue: #2563eb;
+            --amber: #b7791f;
+            --green: #15803d;
+            --red: #b42318;
+            --slate: #263241;
+            --shadow: 0 18px 40px rgba(20, 34, 32, 0.08);
+            --radius: 8px;
+            --radius-lg: 12px;
         }
 
-        /* HERO */
-        .hero { max-width: 1400px; margin: 0 auto; padding: 6rem 5% 4rem; position: relative; text-align: center; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: -300px; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%); pointer-events: none; }
-        .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; border-radius: 50px; background: rgba(34,211,238,0.08); border: 1px solid rgba(34,211,238,0.2); color: var(--teal); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.5rem; }
-        .hero-badge span { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
-        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.2; margin-bottom: 1.5rem; color: var(--text); }
-        .hero h1 .gradient { background: linear-gradient(135deg, var(--indigo), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .hero-subtitle { max-width: 700px; margin: 0 auto 2.5rem; color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; }
-        .hero-ctas { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
-        .hero-social-links { text-align: center; font-size: 0.85rem; color: var(--text-subtle); }
-        .hero-social-links a { color: var(--text-muted); margin: 0 0.5rem; }
-        .hero-social-links a:hover { color: var(--indigo); }
-        @media (max-width: 768px) {
-            .hero { padding: 4rem 5% 3rem; }
-            .hero h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); }
-            .hero-ctas { flex-direction: column; align-items: stretch; }
-            .hero-ctas .btn { width: 100%; }
+        * {
+            box-sizing: border-box;
         }
 
-        /* STATS */
-        .stats { max-width: 1400px; margin: 0 auto; padding: 4rem 5%; }
-        .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
-        .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem 1.5rem; text-align: center; transition: all var(--transition); }
-        .stat-card:hover { border-color: var(--border-hover); background: var(--card-hover); transform: translateY(-4px); }
-        .stat-value { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; background: linear-gradient(135deg, var(--indigo), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem; }
-        .stat-label { font-size: 0.75rem; font-weight: 700; color: var(--text-subtle); text-transform: uppercase; letter-spacing: 0.07em; line-height: 1.6; }
-        @media (max-width: 1200px) { .stats-grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (max-width: 768px) { .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; } .stat-card { padding: 1.5rem 1rem; } .stat-value { font-size: 1.5rem; } }
+        html {
+            scroll-behavior: smooth;
+        }
 
-        /* PROJECTS */
-        .projects-section { background: var(--bg-secondary); padding: 6rem 5%; }
-        .projects-inner { max-width: 1400px; margin: 0 auto; }
-        .section-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 0.5rem; }
-        .section-subtitle { color: var(--text-muted); font-size: 1.05rem; max-width: 700px; margin-bottom: 2.5rem; line-height: 1.7; }
-        .filter-tabs { display: flex; gap: 0.75rem; margin-bottom: 3rem; flex-wrap: wrap; }
-        .filter-btn { padding: 0.6rem 1.2rem; border-radius: 50px; border: 1px solid var(--border); background: transparent; color: var(--text-muted); font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all var(--transition); }
-        .filter-btn:hover, .filter-btn.active { background: var(--indigo); border-color: var(--indigo); color: #fff; }
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2rem; }
-        .proj-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: all var(--transition); display: flex; flex-direction: column; animation: fadeUp 0.6s ease both; }
-        .proj-card:hover { border-color: var(--indigo); background: var(--card-hover); transform: translateY(-8px); box-shadow: var(--shadow-hover); }
-        .proj-card.hidden { display: none; }
-        .card-preview { height: 200px; position: relative; overflow: hidden; background: var(--bg-secondary); }
-        .card-preview-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
-        .proj-card:hover .card-preview-img { transform: scale(1.04); }
-        .card-preview-fallback { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
-        .card-preview-fallback i { font-size: 2.5rem; opacity: 0.55; }
-        .card-preview-fallback span { font-size: 0.65rem; color: var(--text-subtle); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
-        .card-preview-bg-color { position: absolute; inset: 0; opacity: 0.07; }
-        .card-preview-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, var(--card) 100%); }
-        .card-stripe { height: 3px; background: linear-gradient(90deg, var(--indigo), var(--teal), var(--emerald)); }
-        .card-content { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
-        .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
-        .card-sector { font-size: 0.7rem; font-weight: 700; color: var(--text-subtle); text-transform: uppercase; letter-spacing: 0.07em; }
-        .card-status { display: flex; align-items: center; gap: 0.35rem; font-size: 0.7rem; font-weight: 700; color: var(--emerald); text-transform: uppercase; letter-spacing: 0.07em; }
-        .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--emerald); }
-        .card-title { font-size: 1.15rem; margin-bottom: 0.5rem; }
-        .card-context { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem; line-height: 1.5; }
-        .card-case { display: flex; flex-direction: column; gap: 0.5rem; margin: 0.75rem 0 1rem; padding: 0.75rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 10px; }
-        .card-case-item { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.82rem; }
-        .case-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.15rem 0.5rem; border-radius: 4px; flex-shrink: 0; margin-top: 0.1rem; }
-        .case-label.problem { background: rgba(244,63,94,0.15); color: #f43f5e; }
-        .case-label.solution { background: rgba(16,185,129,0.12); color: #10b981; }
-        .case-text { color: var(--text-muted); line-height: 1.5; }
-        .card-kpis { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; }
-        .card-kpi { flex: 1; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 0.6rem 0.5rem; text-align: center; }
-        .kpi-value { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.15rem; font-weight: 800; margin-bottom: 0.15rem; }
-        .kpi-label { font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
-        .card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
-        .card-tag { font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 6px; background: rgba(99,102,241,0.12); color: var(--indigo-light); border: 1px solid rgba(99,102,241,0.2); }
-        .card-actions { display: flex; gap: 0.5rem; margin-top: auto; }
-        @media (max-width: 768px) { .projects-grid { grid-template-columns: 1fr; } .card-actions { flex-wrap: wrap; } .btn-case { flex: auto; } }
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.6;
+        }
 
-        /* SKILLS */
-        .skills-section { max-width: 1400px; margin: 0 auto; padding: 6rem 5%; }
-        .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-        .skill-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; transition: all var(--transition); animation: fadeUp 0.6s ease both; }
-        .skill-card:hover { border-color: var(--skill-color); background: var(--card-hover); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-        .skill-icon { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; background: rgba(99,102,241,0.1); }
-        .skill-card:nth-child(1) .skill-icon { background: rgba(99,102,241,0.1); color: var(--indigo); }
-        .skill-card:nth-child(2) .skill-icon { background: rgba(245,158,11,0.1); color: var(--amber); }
-        .skill-card:nth-child(3) .skill-icon { background: rgba(34,211,238,0.1); color: var(--teal); }
-        .skill-card:nth-child(4) .skill-icon { background: rgba(16,185,129,0.1); color: var(--emerald); }
-        .skill-card:nth-child(1) { --skill-color: var(--indigo); }
-        .skill-card:nth-child(2) { --skill-color: var(--amber); }
-        .skill-card:nth-child(3) { --skill-color: var(--teal); }
-        .skill-card:nth-child(4) { --skill-color: var(--emerald); }
-        .skill-title { font-size: 1.2rem; margin-bottom: 0.75rem; }
-        .skill-desc { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.7; }
-        .skill-usecases { list-style: none; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.3rem; }
-        .skill-usecases li { font-size: 0.8rem; color: var(--text-subtle); padding-left: 1.1rem; position: relative; line-height: 1.4; }
-        .skill-usecases li::before { content: '→'; position: absolute; left: 0; color: var(--skill-color); font-size: 0.7rem; font-weight: 700; }
-        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-        .skill-tag { font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 6px; background: rgba(99,102,241,0.12); color: var(--indigo-light); border: 1px solid rgba(99,102,241,0.2); }
-        .skill-card:nth-child(2) .skill-tag { background: rgba(245,158,11,0.12); color: var(--amber); border-color: rgba(245,158,11,0.2); }
-        .skill-card:nth-child(3) .skill-tag { background: rgba(34,211,238,0.12); color: var(--teal); border-color: rgba(34,211,238,0.2); }
-        .skill-card:nth-child(4) .skill-tag { background: rgba(16,185,129,0.12); color: var(--emerald); border-color: rgba(16,185,129,0.2); }
-        @media (max-width: 900px) { .skills-grid { grid-template-columns: 1fr; } }
-        @media (max-width: 768px) { .skill-card { padding: 1.5rem; } }
+        body.menu-open {
+            overflow: hidden;
+        }
 
-        /* PROCESS */
-        .process-section { background: var(--bg-secondary); padding: 6rem 5%; }
-        .process-inner { max-width: 1400px; margin: 0 auto; }
-        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .process-card { animation: fadeUp 0.6s ease both; }
-        .process-card:nth-child(1) { animation-delay: 0.1s; }
-        .process-card:nth-child(2) { animation-delay: 0.2s; }
-        .process-card:nth-child(3) { animation-delay: 0.3s; }
-        .process-card:nth-child(4) { animation-delay: 0.4s; }
-        .process-number { font-family: 'Bricolage Grotesque', sans-serif; font-size: 3.5rem; font-weight: 800; color: var(--indigo-light); margin-bottom: 1rem; opacity: 0.8; }
-        .process-title { font-size: 1.1rem; margin-bottom: 0.75rem; }
-        .process-desc { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-        /* ABOUT */
-        .about-section { max-width: 1400px; margin: 0 auto; padding: 6rem 5%; }
-        .about-grid { display: grid; grid-template-columns: 1fr 360px; gap: 4rem; align-items: start; }
-        .about-intro-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; border-radius: 50px; background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2); color: var(--indigo-light); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 1.5rem; }
-        .about-intro-badge span { width: 6px; height: 6px; border-radius: 50%; background: var(--indigo-light); }
-        .about-para { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.2rem; }
-        .about-highlight { display: flex; gap: 1rem; align-items: flex-start; padding: 1.2rem 1.5rem; background: rgba(16,185,129,0.06); border: 1px solid rgba(16,185,129,0.18); border-radius: 12px; margin-top: 1.5rem; }
-        .about-highlight i { color: #10b981; margin-top: 0.15rem; font-size: 1rem; flex-shrink: 0; }
-        .about-highlight span { font-size: 0.95rem; color: var(--text); line-height: 1.6; }
-        .about-profile-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; text-align: center; position: sticky; top: 100px; }
-        .about-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #6366f1, #22d3ee); display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.6rem; font-weight: 800; color: #fff; margin: 0 auto 1.25rem; }
-        .about-name { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.2rem; font-weight: 800; margin-bottom: 0.25rem; }
-        .about-role { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem; }
-        .about-divider { height: 1px; background: var(--border); margin: 0 0 1.25rem; }
-        .about-specs { text-align: left; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
-        .about-spec { display: flex; align-items: center; gap: 0.6rem; font-size: 0.83rem; color: var(--text-muted); }
-        .about-spec i { color: var(--indigo-light); width: 14px; text-align: center; font-size: 0.8rem; }
-        .about-spec a { color: var(--text-muted); transition: color 0.2s; }
-        .about-spec a:hover { color: var(--indigo-light); }
-        .about-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; margin-bottom: 1.5rem; }
-        .about-stack-tag { font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 6px; background: rgba(99,102,241,0.12); color: var(--indigo-light); border: 1px solid rgba(99,102,241,0.2); }
-        .about-actions { display: flex; flex-direction: column; gap: 0.6rem; }
-        .about-actions .btn { width: 100%; justify-content: center; }
-        @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 2rem; } .about-profile-card { position: static; } }
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-        /* CONTACT */
-        .contact-section { background: var(--bg-secondary); padding: 7rem 5%; text-align: center; position: relative; overflow: hidden; }
-        .contact-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 65%); pointer-events: none; }
-        .contact-inner { max-width: 640px; margin: 0 auto; position: relative; }
-        .contact-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; border-radius: 50px; background: rgba(34,211,238,0.08); border: 1px solid rgba(34,211,238,0.2); color: #22d3ee; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.5rem; }
-        .contact-badge span { width: 6px; height: 6px; border-radius: 50%; background: #22d3ee; }
-        .contact-section h2 { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem; }
-        .contact-section p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 2.5rem; max-width: 520px; margin-left: auto; margin-right: auto; }
-        .contact-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
-        .contact-secondary { display: flex; justify-content: center; align-items: center; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); flex-wrap: wrap; }
-        .contact-secondary a { display: flex; align-items: center; gap: 0.4rem; color: var(--text-muted); transition: color var(--transition); }
-        .contact-secondary a:hover { color: var(--text); }
-        @media (max-width: 768px) { .contact-section { padding: 4rem 5%; } .contact-actions { flex-direction: column; } .contact-actions .btn { width: 100%; } }
+        button {
+            font: inherit;
+        }
 
-        /* FOOTER */
-        .footer { background: var(--bg); border-top: 1px solid var(--border); padding: 1.5rem 5%; }
-        .footer-inner { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
-        .footer-brand { font-size: 0.9rem; color: var(--text-muted); }
-        .footer-brand strong { color: var(--text); }
-        .footer-links-row { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-        .footer-links-row a { font-size: 0.85rem; color: var(--text-subtle); transition: color var(--transition); }
-        .footer-links-row a:hover { color: var(--text-muted); }
-        .footer-copy { font-size: 0.8rem; color: var(--text-subtle); }
+        .shell {
+            width: min(1180px, calc(100% - 40px));
+            margin: 0 auto;
+        }
 
-        /* MODALS */
-        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 2000; align-items: center; justify-content: center; padding: 2rem 5%; }
-        .modal.active { display: flex; }
-        .modal-content { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); width: 100%; max-width: 700px; max-height: 85vh; overflow-y: auto; animation: slideUp 0.3s ease; }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .modal-header { padding: 2rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; }
-        .modal-title { font-size: 1.5rem; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; }
-        .modal-close { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; transition: color var(--transition); }
-        .modal-close:hover { color: var(--text); }
-        .modal-body { padding: 2rem; display: flex; flex-direction: column; gap: 2rem; }
-        .modal-block { display: flex; flex-direction: column; gap: 0.75rem; }
-        .modal-block h3 { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--indigo-light); }
-        .modal-block p { color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; }
-        .modal-case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-        .modal-case-item { background: rgba(255,255,255,0.03); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); }
-        .modal-case-item h4 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--indigo-light); margin-bottom: 0.5rem; }
-        .modal-case-item p { font-size: 0.9rem; color: var(--text-muted); }
-        .modal-impact { background: rgba(16,185,129,0.06); border: 1px solid rgba(16,185,129,0.18); border-radius: 12px; padding: 1.5rem; }
-        .modal-impact h3 { color: #10b981; margin-bottom: 0.75rem; }
-        .modal-impact p { color: var(--text); font-size: 0.95rem; }
-        .modal-footer { padding: 2rem; border-top: 1px solid var(--border); display: flex; gap: 0.75rem; flex-wrap: wrap; }
-        .modal-footer .btn { flex: 1; min-width: 120px; }
-        @media (max-width: 768px) { .modal { padding: 1rem 5%; } .modal-content { max-height: 90vh; } .modal-case-grid { grid-template-columns: 1fr; } .modal-header, .modal-body, .modal-footer { padding: 1.5rem; } }
+        .section {
+            padding: 84px 0;
+        }
 
-        /* ANIMATIONS */
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .fade-up { opacity: 0; transform: translateY(20px); }
-        .fade-up.visible { opacity: 1; transform: translateY(0); transition: all 0.6s ease; }
-        .fade-up:nth-child(1).visible { transition-delay: 0s; }
-        .fade-up:nth-child(2).visible { transition-delay: 0.1s; }
-        .fade-up:nth-child(3).visible { transition-delay: 0.2s; }
-        .fade-up:nth-child(4).visible { transition-delay: 0.3s; }
-        .fade-up:nth-child(5).visible { transition-delay: 0.4s; }
-        .fade-up:nth-child(6).visible { transition-delay: 0.5s; }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: var(--indigo); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--indigo-light); }
+        main section[id] {
+            scroll-margin-top: 92px;
+        }
+
+        .section.alt {
+            background: #ffffff;
+            border-block: 1px solid var(--line);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 0 14px;
+            color: var(--teal-dark);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--teal);
+        }
+
+        .section-head {
+            max-width: 760px;
+            margin-bottom: 34px;
+        }
+
+        .section-title {
+            margin: 0;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.08;
+            letter-spacing: 0;
+        }
+
+        .section-copy {
+            margin: 14px 0 0;
+            color: var(--muted);
+            font-size: 1.02rem;
+            max-width: 720px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 44px;
+            padding: 0 16px;
+            border: 1px solid transparent;
+            border-radius: var(--radius);
+            font-size: 0.92rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn.primary {
+            background: var(--teal);
+            color: #fff;
+            box-shadow: 0 12px 26px rgba(15, 118, 110, 0.18);
+        }
+
+        .btn.primary:hover {
+            background: var(--teal-dark);
+        }
+
+        .btn.secondary {
+            background: #fff;
+            color: var(--slate);
+            border-color: var(--line-strong);
+        }
+
+        .btn.secondary:hover {
+            border-color: var(--teal);
+            color: var(--teal-dark);
+        }
+
+        .btn.ghost {
+            background: transparent;
+            color: var(--muted);
+            border-color: var(--line);
+        }
+
+        .btn.icon-only {
+            width: 44px;
+            padding: 0;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(247, 250, 249, 0.9);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(217, 227, 223, 0.8);
+        }
+
+        .nav {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 900;
+        }
+
+        .brand-mark {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: var(--radius);
+            background: var(--slate);
+            color: #fff;
+            font-size: 0.86rem;
+            letter-spacing: 0;
+        }
+
+        .brand small {
+            display: block;
+            color: var(--subtle);
+            font-size: 0.72rem;
+            font-weight: 700;
+            margin-top: -2px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            color: var(--muted);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--teal-dark);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .hero {
+            padding: 54px 0 44px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.72fr);
+            gap: 44px;
+            align-items: center;
+        }
+
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 8px 12px;
+            border: 1px solid #b8ddd6;
+            border-radius: 999px;
+            background: #e9f8f5;
+            color: var(--teal-dark);
+            font-size: 0.82rem;
+            font-weight: 800;
+        }
+
+        .availability span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+        }
+
+        .hero h1 {
+            margin: 22px 0 18px;
+            max-width: 760px;
+            font-size: clamp(2.45rem, 4.6vw, 3.85rem);
+            line-height: 1.05;
+            letter-spacing: 0;
+        }
+
+        .hero-lead {
+            max-width: 720px;
+            margin: 0;
+            color: var(--muted);
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .meta-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            color: var(--muted);
+            font-size: 0.83rem;
+            font-weight: 750;
+        }
+
+        .profile-panel {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .profile-top {
+            padding: 22px;
+            display: grid;
+            grid-template-columns: 84px 1fr;
+            gap: 16px;
+            align-items: center;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .avatar {
+            width: 84px;
+            height: 84px;
+            border-radius: 12px;
+            object-fit: cover;
+            background: var(--surface-soft);
+            border: 1px solid var(--line);
+        }
+
+        .profile-top h2 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .profile-top p {
+            margin: 4px 0 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .profile-list {
+            padding: 18px 22px 22px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .profile-item {
+            display: grid;
+            grid-template-columns: 26px 1fr;
+            gap: 10px;
+            align-items: start;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .profile-item i {
+            margin-top: 4px;
+            color: var(--teal);
+        }
+
+        .stack-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 0 22px 22px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 9px;
+            border-radius: 7px;
+            background: #eef6f4;
+            color: #164e49;
+            border: 1px solid #cfe3de;
+            font-size: 0.76rem;
+            font-weight: 800;
+        }
+
+        .signal-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-top: 32px;
+        }
+
+        .signal {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            padding: 18px;
+        }
+
+        .signal strong {
+            display: block;
+            font-size: clamp(1.45rem, 3vw, 2rem);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .signal span {
+            color: var(--muted);
+            font-size: 0.86rem;
+            font-weight: 700;
+        }
+
+        .role-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 14px;
+        }
+
+        .role-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            padding: 18px;
+            min-height: 198px;
+        }
+
+        .role-card i {
+            color: var(--teal);
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .role-card h3 {
+            margin: 0 0 8px;
+            font-size: 1rem;
+        }
+
+        .role-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 26px;
+        }
+
+        .filter-btn {
+            min-height: 40px;
+            padding: 0 13px;
+            border: 1px solid var(--line-strong);
+            border-radius: var(--radius);
+            background: #fff;
+            color: var(--muted);
+            font-size: 0.84rem;
+            font-weight: 850;
+            cursor: pointer;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            color: #fff;
+            border-color: var(--teal);
+            background: var(--teal);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 14px 30px rgba(19, 33, 31, 0.05);
+        }
+
+        .project-card.hidden {
+            display: none;
+        }
+
+        .project-visual {
+            min-height: 134px;
+            padding: 16px;
+            background: var(--visual-bg, #eef6f4);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .mini-dashboard {
+            height: 102px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 10px;
+        }
+
+        .mini-left,
+        .mini-right {
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.85);
+            border-radius: var(--radius);
+            padding: 10px;
+        }
+
+        .mini-kpi {
+            height: 12px;
+            width: 58%;
+            border-radius: 3px;
+            background: var(--accent, var(--teal));
+            margin-bottom: 10px;
+        }
+
+        .mini-line {
+            height: 8px;
+            border-radius: 3px;
+            background: rgba(38, 50, 65, 0.18);
+            margin-bottom: 7px;
+        }
+
+        .mini-line:nth-child(3) {
+            width: 72%;
+        }
+
+        .mini-bars {
+            height: 72px;
+            display: flex;
+            gap: 6px;
+            align-items: end;
+        }
+
+        .mini-bars span {
+            flex: 1;
+            min-width: 8px;
+            border-radius: 4px 4px 2px 2px;
+            background: var(--accent, var(--teal));
+            opacity: 0.86;
+        }
+
+        .mini-bars span:nth-child(1) { height: 46%; }
+        .mini-bars span:nth-child(2) { height: 72%; }
+        .mini-bars span:nth-child(3) { height: 58%; }
+        .mini-bars span:nth-child(4) { height: 88%; }
+        .mini-bars span:nth-child(5) { height: 64%; }
+
+        .project-body {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .pill {
+            padding: 4px 7px;
+            border-radius: 6px;
+            background: #f1f5f9;
+            color: #475569;
+            font-size: 0.7rem;
+            font-weight: 850;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .pill.private {
+            background: #fff4e5;
+            color: #8a4b08;
+        }
+
+        .project-card h3 {
+            margin: 0 0 9px;
+            font-size: 1.13rem;
+            line-height: 1.25;
+        }
+
+        .project-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.91rem;
+        }
+
+        .project-proof {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 16px 0;
+        }
+
+        .proof-item {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 10px;
+            background: #fbfdfc;
+        }
+
+        .proof-item strong {
+            display: block;
+            color: var(--accent, var(--teal));
+            font-size: 1.15rem;
+            line-height: 1.1;
+        }
+
+        .proof-item span {
+            display: block;
+            margin-top: 4px;
+            color: var(--subtle);
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .project-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .project-stack .tag {
+            padding: 5px 7px;
+            font-size: 0.7rem;
+        }
+
+        .project-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 9px;
+            flex-wrap: wrap;
+        }
+
+        .project-actions .btn {
+            min-height: 40px;
+            font-size: 0.82rem;
+        }
+
+        .skill-board {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 22px;
+            align-items: start;
+        }
+
+        .toolbox {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            padding: 22px;
+            position: sticky;
+            top: 92px;
+        }
+
+        .toolbox h3 {
+            margin: 0 0 14px;
+            font-size: 1.12rem;
+        }
+
+        .tool-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .capability-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .capability {
+            display: grid;
+            grid-template-columns: 42px 1fr;
+            gap: 14px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            padding: 18px;
+        }
+
+        .capability i {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: var(--radius);
+            background: var(--surface-soft);
+            color: var(--teal);
+        }
+
+        .capability h3 {
+            margin: 0 0 6px;
+            font-size: 1rem;
+        }
+
+        .capability p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .method-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+        }
+
+        .method-number {
+            display: inline-grid;
+            place-items: center;
+            width: 34px;
+            height: 34px;
+            border-radius: var(--radius);
+            background: var(--slate);
+            color: #fff;
+            font-weight: 900;
+            margin-bottom: 18px;
+        }
+
+        .method-card h3 {
+            margin: 0 0 8px;
+            font-size: 1rem;
+        }
+
+        .method-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.78fr;
+            gap: 26px;
+        }
+
+        .about-card,
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            padding: 26px;
+        }
+
+        .about-card p {
+            color: var(--muted);
+            margin: 0 0 15px;
+        }
+
+        .about-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 12px;
+        }
+
+        .timeline-item {
+            padding: 14px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: #fbfdfc;
+        }
+
+        .timeline-item strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .timeline-item span {
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .contact-section {
+            padding: 84px 0;
+            background: var(--slate);
+            color: #fff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.72fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .contact-section .eyebrow {
+            color: #99f6e4;
+        }
+
+        .contact-section .section-title {
+            color: #fff;
+        }
+
+        .contact-section .section-copy {
+            color: #d2dde7;
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.14);
+        }
+
+        .contact-line {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            color: #d2dde7;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .contact-line:last-child {
+            border-bottom: 0;
+        }
+
+        .contact-line i {
+            width: 22px;
+            color: #99f6e4;
+        }
+
+        .footer {
+            padding: 26px 0;
+            color: var(--subtle);
+            background: #fff;
+            border-top: 1px solid var(--line);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+            font-size: 0.88rem;
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 22px;
+            background: rgba(17, 24, 39, 0.68);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-panel {
+            width: min(760px, 100%);
+            max-height: 88vh;
+            overflow: auto;
+            background: #fff;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+        }
+
+        .modal-head {
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            align-items: start;
+            padding: 24px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .modal-head h3 {
+            margin: 0;
+            font-size: 1.45rem;
+        }
+
+        .modal-close {
+            width: 38px;
+            height: 38px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: #fff;
+            cursor: pointer;
+            color: var(--muted);
+        }
+
+        .modal-body {
+            padding: 24px;
+            display: grid;
+            gap: 18px;
+        }
+
+        .case-block {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 16px;
+            background: #fbfdfc;
+        }
+
+        .case-block h4 {
+            margin: 0 0 8px;
+            color: var(--teal-dark);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+        }
+
+        .case-block p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .modal-foot {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 20px 24px 24px;
+            border-top: 1px solid var(--line);
+        }
+
+        @media (max-width: 1080px) {
+            .hero-grid,
+            .skill-board,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .role-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .method-grid,
+            .signal-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .toolbox {
+                position: static;
+            }
+        }
+
+        @media (max-width: 820px) {
+            .nav-links,
+            .nav-actions .btn.secondary:not(.menu-toggle) {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: inline-flex;
+            }
+
+            .nav-links.open {
+                position: fixed;
+                inset: 72px 0 auto 0;
+                display: grid;
+                gap: 0;
+                padding: 14px 20px 22px;
+                background: #fff;
+                border-bottom: 1px solid var(--line);
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.open a {
+                padding: 14px 0;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .hero {
+                padding-top: 48px;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.12rem, 10.2vw, 3rem);
+                line-height: 1.07;
+            }
+
+            .profile-top {
+                grid-template-columns: 74px 1fr;
+            }
+
+            .avatar {
+                width: 74px;
+                height: 74px;
+            }
+
+            .role-grid,
+            .projects-grid,
+            .method-grid,
+            .signal-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .shell {
+                width: min(100% - 28px, 1180px);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .hero-actions .btn,
+            .contact-actions .btn,
+            .project-actions .btn {
+                width: 100%;
+            }
+
+            .project-proof {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
+    <header class="topbar">
+        <div class="shell nav">
+            <a href="#profil" class="brand" aria-label="Retour en haut de page">
+                <span class="brand-mark">MB</span>
+                <span>Bakayoko Moussa <small>Data Analyst · BI · Python</small></span>
+            </a>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="navbar-inner">
-            <div class="navbar-brand">
-                <i class="fa-solid fa-chart-pie"></i>
-                Bakayoko.
-            </div>
-            <ul class="navbar-links">
-                <li><a href="#projets" class="nav-link">Projets</a></li>
-                <li><a href="#competences" class="nav-link">Compétences</a></li>
-                <li><a href="#approche" class="nav-link">Mon approche</a></li>
-                <li><a href="#apropos" class="nav-link">À propos</a></li>
-                <li><a href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener" class="nav-link"><i class="fa-brands fa-github"></i></a></li>
-            </ul>
-            <div class="navbar-cta">
-                <a href="#contact" class="btn btn-secondary">Contact</a>
-                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-            </div>
-        </div>
-    </nav>
+            <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+                <a href="#profil">Profil</a>
+                <a href="#projets">Projets</a>
+                <a href="#competences">Compétences</a>
+                <a href="#approche">Approche</a>
+                <a href="#contact">Contact</a>
+            </nav>
 
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobile-menu">
-        <ul class="mobile-menu-links">
-            <li><a href="#projets" class="mobile-menu-link">Projets</a></li>
-            <li><a href="#competences" class="mobile-menu-link">Compétences</a></li>
-            <li><a href="#approche" class="mobile-menu-link">Mon approche</a></li>
-            <li><a href="#apropos" class="mobile-menu-link">À propos</a></li>
-            <li><a href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener" class="mobile-menu-link">GitHub</a></li>
-            <li><a href="#contact" class="mobile-menu-link">Contact</a></li>
-        </ul>
-    </div>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-badge"><span></span>Disponible — Recherche CDI Data Analyst / BI</div>
-        <h1>Data Analyst & BI.<br>Des reportings fiables,<br>des <span class="gradient">décisions éclairées.</span></h1>
-        <p class="hero-subtitle">Bientôt diplômé, spécialisé en Power BI, SQL, Python et automatisation. J'aide les équipes métier à fiabiliser leurs données, accélérer leurs reportings et construire des tableaux de bord directement utiles à la décision.</p>
-        <div class="hero-ctas">
-            <a href="#projets" class="btn btn-primary">Voir mes projets <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="CV_Bakayoko_Moussa.pdf" download class="btn btn-secondary">Télécharger mon CV</a>
-        </div>
-        <div class="hero-social-links">
-            <a href="https://www.linkedin.com/in/moussa-bakayoko-3b1946152/" target="_blank" rel="noopener">LinkedIn</a>
-            <span>·</span>
-            <a href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener">GitHub</a>
-        </div>
-    </section>
-
-    <!-- STATS -->
-    <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-card"><div class="stat-value">6+</div><div class="stat-label">Projets data<br>livrés</div></div>
-            <div class="stat-card"><div class="stat-value">9000+</div><div class="stat-label">Dossiers<br>fiabilisés</div></div>
-            <div class="stat-card"><div class="stat-value">-80%</div><div class="stat-label">Temps de<br>reporting</div></div>
-            <div class="stat-card"><div class="stat-value">90K+</div><div class="stat-label">Formules &<br>données</div></div>
-            <div class="stat-card"><div class="stat-value">4</div><div class="stat-label">Domaines<br>couverts</div></div>
-        </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="projects-section" id="projets">
-        <div class="projects-inner">
-            <h2 class="section-title">Études de cas — Projets & Impact</h2>
-            <p class="section-subtitle">Six projets construits sur de vraies problématiques métier. Chaque cas documente le problème, la solution et l'impact mesuré.</p>
-            <div class="filter-tabs">
-                <button class="filter-btn active" data-filter="all">Tous</button>
-                <button class="filter-btn" data-filter="excel">Excel / VBA</button>
-                <button class="filter-btn" data-filter="powerbi">Power BI</button>
-                <button class="filter-btn" data-filter="python">Python</button>
-                <button class="filter-btn" data-filter="ml">Machine Learning</button>
-            </div>
-            <div class="projects-grid">
-
-                <!-- Projet 1 -->
-                <article class="proj-card fade-up cat-excel" data-category="excel">
-                    <div class="card-preview">
-                        <div class="card-preview-fallback"><i class="fa-solid fa-file-excel"></i><span>Aperçu disponible sur demande</span></div>
-                        <div class="card-preview-bg-color" style="--preview-color: #1f7347;"></div>
-                        <div class="card-preview-overlay"></div>
-                    </div>
-                    <div class="card-stripe"></div>
-                    <div class="card-content">
-                        <div class="card-meta"><span class="card-sector">Secteur public</span><span class="card-status"><span class="status-dot"></span>Livré</span></div>
-                        <h3 class="card-title">Audit Dashboard Marchés Publics</h3>
-                        <p class="card-context">Fiabilisation d'un outil critique de suivi de 9 000 dossiers administratifs.</p>
-                        <div class="card-case">
-                            <div class="card-case-item"><span class="case-label problem">Problème</span><span class="case-text">Calculs budgétaires erronés sur 90 000 formules, consolidation manuelle de 4h par semaine.</span></div>
-                            <div class="card-case-item"><span class="case-label solution">Solution</span><span class="case-text">Audit complet, correction des formules et automatisation VBA du reporting.</span></div>
-                        </div>
-                        <div class="card-kpis">
-                            <div class="card-kpi"><div class="kpi-value" style="color: #10b981;">-99%</div><div class="kpi-label">Temps rapport</div></div>
-                            <div class="card-kpi"><div class="kpi-value" style="color: #10b981;">0</div><div class="kpi-label">Erreur humaine</div></div>
-                        </div>
-                        <div class="card-tags"><span class="card-tag">Excel</span><span class="card-tag">VBA</span><span class="card-tag">Power Query</span></div>
-                        <div class="card-actions">
-                            <button class="btn btn-case" onclick="openModal('modal1')"><i class="fa-solid fa-book-open"></i> Étude de cas</button>
-                            <a href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener" class="btn btn-icon btn-github" title="Voir le code"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://github.com/MousBak/Rapports" target="_blank" rel="noopener" class="btn btn-icon btn-report" title="Voir le rapport"><i class="fa-solid fa-file-pdf"></i></a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Projet 2 -->
-                <article class="proj-card fade-up cat-python cat-ml" data-category="python ml">
-                    <div class="card-preview">
-                        <div class="card-preview-fallback"><i class="fa-solid fa-film"></i><span>Aperçu disponible sur demande</span></div>
-                        <div class="card-preview-bg-color" style="--preview-color: #7c3aed;"></div>
-                        <div class="card-preview-overlay"></div>
-                    </div>
-                    <div class="card-stripe"></div>
-                    <div class="card-content">
-                        <div class="card-meta"><span class="card-sector">Digital / VOD</span><span class="card-status"><span class="status-dot"></span>Livré</span></div>
-                        <h3 class="card-title">Moteur de Recommandation IA</h3>
-                        <p class="card-context">Système de suggestion personnalisée pour réduire le désabonnement VOD.</p>
-                        <div class="card-case">
-                            <div class="card-case-item"><span class="case-label problem">Problème</span><span class="case-text">Perte d'abonnés liée à un manque de contenu pertinent recommandé.</span></div>
-                            <div class="card-case-item"><span class="case-label solution">Solution</span><span class="case-text">Moteur NLP par similarité cosinus, déployé en application web via Streamlit.</span></div>
-                        </div>
-                        <div class="card-kpis">
-                            <div class="card-kpi"><div class="kpi-value" style="color: #f59e0b;">+40%</div><div class="kpi-label">Pertinence</div></div>
-                            <div class="card-kpi"><div class="kpi-value" style="color: #f59e0b;">&lt;1s</div><div class="kpi-label">Latence</div></div>
-                        </div>
-                        <div class="card-tags"><span class="card-tag">Python</span><span class="card-tag">NLP</span><span class="card-tag">Streamlit</span></div>
-                        <div class="card-actions">
-                            <button class="btn btn-case" onclick="openModal('modal2')"><i class="fa-solid fa-book-open"></i> Étude de cas</button>
-                            <a href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener" class="btn btn-icon btn-github"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://github.com/MousBak/Rapports" target="_blank" rel="noopener" class="btn btn-icon btn-report"><i class="fa-solid fa-file-pdf"></i></a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Projet 3 -->
-                <article class="proj-card fade-up cat-powerbi" data-category="powerbi">
-                    <div class="card-preview">
-                        <div class="card-preview-fallback"><i class="fa-solid fa-chart-bar"></i><span>Aperçu disponible sur demande</span></div>
-                        <div class="card-preview-bg-color" style="--preview-color: #f59e0b;"></div>
-                        <div class="card-preview-overlay"></div>
-                    </div>
-                    <div class="card-stripe"></div>
-                    <div class="card-content">
-                        <div class="card-meta"><span class="card-sector">Commerce</span><span class="card-status"><span class="status-dot"></span>Livré</span></div>
-                        <h3 class="card-title">Dashboard Pilotage Ventes</h3>
-                        <p class="card-context">Centralisation des performances de 5 régions pour les équipes dirigeantes.</p>
-                        <div class="card-case">
-                            <div class="card-case-item"><span class="case-label problem">Problème</span><span class="case-text">Données éparpillées en silos, aucune visibilité en temps réel pour le COMEX.</span></div>
-                            <div class="card-case-item"><span class="case-label solution">Solution</span><span class="case-text">Modélisation DAX, schéma en étoile, actualisation automatique des KPIs.</span></div>
-                        </div>
-                        <div class="card-kpis">
-                            <div class="card-kpi"><div class="kpi-value" style="color: #22d3ee;">-80%</div><div class="kpi-label">Temps manuel</div></div>
-                            <div class="card-kpi"><div class="kpi-value" style="color: #22d3ee;">Real-time</div><div class="kpi-label">Mise à jour</div></div>
-                        </div>
-                        <div class="card-tags"><span class="card-tag">Power BI</span><span class="card-tag">DAX</span><span class="card-tag">SQL</span></div>
-                        <div class="card-actions">
-                            <button class="btn btn-case" onclick="openModal('modal3')"><i class="fa-solid fa-book-open"></i> Étude de cas</button>
-                            <a href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener" class="btn btn-icon btn-github"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://github.com/MousBak/Rapports" target="_blank" rel="noopener" class="btn btn-icon btn-report"><i class="fa-solid fa-file-pdf"></i></a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Projet 4 -->
-                <article class="proj-card fade-up cat-python" data-category="python">
-                    <div class="card-preview">
-                        <div class="card-preview-fallback"><i class="fa-solid fa-map-location-dot"></i><span>Aperçu disponible sur demande</span></div>
-                        <div class="card-preview-bg-color" style="--preview-color: #06b6d4;"></div>
-                        <div class="card-preview-overlay"></div>
-                    </div>
-                    <div class="card-stripe"></div>
-                    <div class="card-content">
-                        <div class="card-meta"><span class="card-sector">Sécurité urbaine</span><span class="card-status"><span class="status-dot"></span>Livré</span></div>
-                        <h3 class="card-title">Analyse Big Data — Criminalité Chicago</h3>
-                        <p class="card-context">Traitement de 20 ans d'historique criminel pour cartographier les risques urbains.</p>
-                        <div class="card-case">
-                            <div class="card-case-item"><span class="case-label problem">Problème</span><span class="case-text">Volume de données impossible à traiter avec des outils classiques.</span></div>
-                            <div class="card-case-item"><span class="case-label solution">Solution</span><span class="case-text">Pipeline PySpark distribué + cartographie géographique Folium des hotspots.</span></div>
-                        </div>
-                        <div class="card-kpis">
-                            <div class="card-kpi"><div class="kpi-value" style="color: #22d3ee;">20+</div><div class="kpi-label">Années données</div></div>
-                            <div class="card-kpi"><div class="kpi-value" style="color: #22d3ee;">✓</div><div class="kpi-label">Hotspots</div></div>
-                        </div>
-                        <div class="card-tags"><span class="card-tag">PySpark</span><span class="card-tag">Folium</span><span class="card-tag">Big Data</span></div>
-                        <div class="card-actions">
-                            <button class="btn btn-case" onclick="openModal('modal4')"><i class="fa-solid fa-book-open"></i> Étude de cas</button>
-                            <a href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener" class="btn btn-icon btn-github"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://github.com/MousBak/Rapports" target="_blank" rel="noopener" class="btn btn-icon btn-report"><i class="fa-solid fa-file-pdf"></i></a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Projet 5 -->
-                <article class="proj-card fade-up cat-ml" data-category="ml python">
-                    <div class="card-preview">
-                        <div class="card-preview-fallback"><i class="fa-solid fa-users-viewfinder"></i><span>Aperçu disponible sur demande</span></div>
-                        <div class="card-preview-bg-color" style="--preview-color: #ec4899;"></div>
-                        <div class="card-preview-overlay"></div>
-                    </div>
-                    <div class="card-stripe"></div>
-                    <div class="card-content">
-                        <div class="card-meta"><span class="card-sector">Marketing / E-commerce</span><span class="card-status"><span class="status-dot"></span>Livré</span></div>
-                        <h3 class="card-title">Segmentation Clients (K-Means)</h3>
-                        <p class="card-context">Clustering comportemental pour optimiser le ciblage publicitaire.</p>
-                        <div class="card-case">
-                            <div class="card-case-item"><span class="case-label problem">Problème</span><span class="case-text">Budget marketing gaspillé sur des campagnes uniformes sans segmentation.</span></div>
-                            <div class="card-case-item"><span class="case-label solution">Solution</span><span class="case-text">Algorithme K-Means sur données RFM, réduction dimensionnelle PCA, 4 personas créés.</span></div>
-                        </div>
-                        <div class="card-kpis">
-                            <div class="card-kpi"><div class="kpi-value" style="color: #f43f5e;">+25%</div><div class="kpi-label">Précision Ads</div></div>
-                            <div class="card-kpi"><div class="kpi-value" style="color: #f43f5e;">4</div><div class="kpi-label">Segments</div></div>
-                        </div>
-                        <div class="card-tags"><span class="card-tag">K-Means</span><span class="card-tag">PCA</span><span class="card-tag">Python</span></div>
-                        <div class="card-actions">
-                            <button class="btn btn-case" onclick="openModal('modal5')"><i class="fa-solid fa-book-open"></i> Étude de cas</button>
-                            <a href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener" class="btn btn-icon btn-github"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://github.com/MousBak/Rapports" target="_blank" rel="noopener" class="btn btn-icon btn-report"><i class="fa-solid fa-file-pdf"></i></a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Projet 6 -->
-                <article class="proj-card fade-up cat-ml" data-category="ml python">
-                    <div class="card-preview">
-                        <div class="card-preview-fallback"><i class="fa-solid fa-chart-line"></i><span>Aperçu disponible sur demande</span></div>
-                        <div class="card-preview-bg-color" style="--preview-color: #8b5cf6;"></div>
-                        <div class="card-preview-overlay"></div>
-                    </div>
-                    <div class="card-stripe"></div>
-                    <div class="card-content">
-                        <div class="card-meta"><span class="card-sector">Finance</span><span class="card-status"><span class="status-dot"></span>Livré</span></div>
-                        <h3 class="card-title">Prévision Boursière — Prophet</h3>
-                        <p class="card-context">Forecasting IA des cours GAFAM à 90 jours pour guider les décisions de trésorerie.</p>
-                        <div class="card-case">
-                            <div class="card-case-item"><span class="case-label problem">Problème</span><span class="case-text">Décisions d'investissement prises sans données prévisionnelles fiables.</span></div>
-                            <div class="card-case-item"><span class="case-label solution">Solution</span><span class="case-text">Modèle Prophet sur historique Yahoo Finance, visualisation Plotly interactive.</span></div>
-                        </div>
-                        <div class="card-kpis">
-                            <div class="card-kpi"><div class="kpi-value" style="color: #8b5cf6;">90j</div><div class="kpi-label">Horizon</div></div>
-                            <div class="card-kpi"><div class="kpi-value" style="color: #8b5cf6;">95%</div><div class="kpi-label">Confiance</div></div>
-                        </div>
-                        <div class="card-tags"><span class="card-tag">Prophet</span><span class="card-tag">yFinance API</span><span class="card-tag">Plotly</span></div>
-                        <div class="card-actions">
-                            <button class="btn btn-case" onclick="openModal('modal6')"><i class="fa-solid fa-book-open"></i> Étude de cas</button>
-                            <a href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener" class="btn btn-icon btn-github"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://github.com/MousBak/Rapports" target="_blank" rel="noopener" class="btn btn-icon btn-report"><i class="fa-solid fa-file-pdf"></i></a>
-                        </div>
-                    </div>
-                </article>
-
+            <div class="nav-actions">
+                <a class="btn secondary" href="mailto:moussabakayoko098@gmail.com?subject=Opportunite%20Data%20-%20Bakayoko%20Moussa">
+                    <i class="fa-solid fa-envelope"></i>
+                    Me contacter
+                </a>
+                <button class="btn secondary icon-only menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- SKILLS -->
-    <section class="skills-section" id="competences">
-        <h2 class="section-title">Ce que je fais — et comment</h2>
-        <p class="section-subtitle">Au-delà des outils, voici les usages concrets que je maîtrise pour créer de la valeur avec les données.</p>
-        <div class="skills-grid">
-            <div class="skill-card fade-up">
-                <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
-                <h3 class="skill-title">Python & Machine Learning</h3>
-                <p class="skill-desc">Nettoyage, automatisation de pipelines et modélisation prédictive. Du traitement de données brutes à la livraison d'un modèle opérationnel orienté décision.</p>
-                <ul class="skill-usecases">
-                    <li>Automatiser un pipeline de traitement de données</li>
-                    <li>Créer un moteur de recommandation (NLP, similarité cosinus)</li>
-                    <li>Segmenter une base clients avec K-Means</li>
-                    <li>Prévoir des tendances à horizon fixe (Prophet)</li>
-                </ul>
-                <div class="skill-tags"><span class="skill-tag">Pandas</span><span class="skill-tag">Scikit-learn</span><span class="skill-tag">Prophet</span><span class="skill-tag">PySpark</span></div>
-            </div>
-            <div class="skill-card fade-up">
-                <div class="skill-icon"><i class="fa-solid fa-chart-pie"></i></div>
-                <h3 class="skill-title">Business Intelligence</h3>
-                <p class="skill-desc">Construction de tableaux de bord interactifs, modélisation DAX et reporting automatisé. Priorité à la lisibilité et à l'utilité opérationnelle pour les décideurs.</p>
-                <ul class="skill-usecases">
-                    <li>Consolider 5 sources en une vue temps réel (Power BI)</li>
-                    <li>Créer des KPIs fiables pour un COMEX</li>
-                    <li>Réduire un reporting de plusieurs heures à quelques secondes</li>
-                    <li>Automatiser les calculs de marges et performances</li>
-                </ul>
-                <div class="skill-tags"><span class="skill-tag">Power BI</span><span class="skill-tag">DAX</span><span class="skill-tag">Streamlit</span><span class="skill-tag">Plotly</span></div>
-            </div>
-            <div class="skill-card fade-up">
-                <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
-                <h3 class="skill-title">SQL & Bases de données</h3>
-                <p class="skill-desc">Requêtage structuré, modélisation relationnelle et extraction fiable. Chaque donnée extraite est vérifiée, documentée et prête à entrer dans un modèle analytique.</p>
-                <ul class="skill-usecases">
-                    <li>Extraire et croiser des données multi-sources</li>
-                    <li>Modéliser un schéma décisionnel propre (schéma étoile)</li>
-                    <li>Nettoyer et qualifier des données brutes</li>
-                    <li>Optimiser des requêtes sur grands volumes</li>
-                </ul>
-                <div class="skill-tags"><span class="skill-tag">SQL</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">Modélisation</span><span class="skill-tag">Indexation</span></div>
-            </div>
-            <div class="skill-card fade-up">
-                <div class="skill-icon"><i class="fa-solid fa-file-excel"></i></div>
-                <h3 class="skill-title">Excel & Automatisation</h3>
-                <p class="skill-desc">Audit, correction et automatisation de fichiers Excel complexes. Transformer un outil fragile et chronophage en processus fiable, rapide et documenté.</p>
-                <ul class="skill-usecases">
-                    <li>Corriger 90 000 formules en erreur sur un fichier critique</li>
-                    <li>Automatiser un rapport de 4h en quelques secondes (VBA)</li>
-                    <li>Consolider automatiquement plusieurs sources</li>
-                    <li>Créer des tableaux de bord dynamiques sans code complexe</li>
-                </ul>
-                <div class="skill-tags"><span class="skill-tag">VBA</span><span class="skill-tag">Power Query</span><span class="skill-tag">Audit</span><span class="skill-tag">Macros</span></div>
-            </div>
-        </div>
-    </section>
+    <main>
+        <section class="hero" id="profil">
+            <div class="shell">
+                <div class="hero-grid">
+                    <div>
+                        <div class="availability"><span></span>Disponible pour opportunités Data Analyst / BI</div>
+                        <h1>Transformer les données en décisions claires, mesurables et actionnables.</h1>
+                        <p class="hero-lead">
+                            Data Analyst orienté métier, je construis des analyses SQL, dashboards Power BI,
+                            automatisations Python et modèles ML pour aider les équipes à comprendre ce qui se passe,
+                            prioriser les actions et gagner du temps sur le reporting.
+                        </p>
+                        <div class="hero-actions">
+                            <a class="btn primary" href="#projets">
+                                Voir les projets recruteur
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a class="btn secondary" href="https://www.linkedin.com/in/moussa-bakayoko-3b1946152/" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-linkedin"></i>
+                                LinkedIn
+                            </a>
+                            <a class="btn ghost" href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                        <div class="hero-meta" aria-label="Mots clés du profil">
+                            <span class="meta-chip"><i class="fa-solid fa-database"></i> SQL & Data Quality</span>
+                            <span class="meta-chip"><i class="fa-solid fa-chart-simple"></i> Power BI / DAX</span>
+                            <span class="meta-chip"><i class="fa-brands fa-python"></i> Python / ML</span>
+                            <span class="meta-chip"><i class="fa-solid fa-gears"></i> ETL & Reporting automatisé</span>
+                        </div>
+                    </div>
 
-    <!-- PROCESS -->
-    <section class="process-section" id="approche">
-        <div class="process-inner">
-            <h2 class="section-title">Mon approche</h2>
-            <p class="section-subtitle">Une méthode rigoureuse, pensée pour que la donnée réponde toujours à une vraie question métier.</p>
-            <div class="process-grid">
-                <div class="process-card"><div class="process-number">01</div><h3 class="process-title">Cadrer le besoin</h3><p class="process-desc">Avant tout code, un échange avec les équipes pour identifier la vraie question : quelle décision prend-on ? Quel indicateur manque ? Quel processus est trop lent ?</p></div>
-                <div class="process-card"><div class="process-number">02</div><h3 class="process-title">Extraire & structurer</h3><p class="process-desc">Connexion aux sources, requêtage SQL, nettoyage des anomalies et consolidation via Python ou Power Query. La donnée n'entre dans le modèle que quand elle est fiable.</p></div>
-                <div class="process-card"><div class="process-number">03</div><h3 class="process-title">Modéliser & analyser</h3><p class="process-desc">Construction du modèle de données (DAX, schéma en étoile) ou application de l'algorithme adapté. Chaque choix technique est justifié par l'objectif métier.</p></div>
-                <div class="process-card"><div class="process-number">04</div><h3 class="process-title">Livrer & rendre utile</h3><p class="process-desc">Dashboard propre, rapport clair, modèle documenté. Un livrable est terminé quand il est compris et utilisé par l'équipe cible — pas seulement quand il est techniquement correct.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="about-section" id="apropos">
-        <h2 class="section-title">À propos</h2>
-        <p class="section-subtitle">Qui je suis, ce que j'apporte, ce que je recherche.</p>
-        <div class="about-grid">
-            <div>
-                <div class="about-intro-badge">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    Bientôt diplômé · Disponible en CDI
+                    <aside class="profile-panel" aria-label="Carte profil">
+                        <div class="profile-top">
+                            <img class="avatar" src="https://avatars.githubusercontent.com/u/159626506?v=4" alt="Photo de profil GitHub de Bakayoko Moussa">
+                            <div>
+                                <h2>Bakayoko Moussa</h2>
+                                <p>Data Analyst · BI Analyst · Analytics Engineering Jr</p>
+                            </div>
+                        </div>
+                        <div class="profile-list">
+                            <div class="profile-item">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <span>Recherche : CDI / opportunité data à impact métier</span>
+                            </div>
+                            <div class="profile-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>France · ouvert au remote et hybride</span>
+                            </div>
+                            <div class="profile-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <a href="mailto:moussabakayoko098@gmail.com">moussabakayoko098@gmail.com</a>
+                            </div>
+                            <div class="profile-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <a href="tel:+33766354050">07 66 35 40 50</a>
+                            </div>
+                        </div>
+                        <div class="stack-row">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Power BI</span>
+                            <span class="tag">DAX</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Scikit-learn</span>
+                            <span class="tag">ETL</span>
+                            <span class="tag">Data Quality</span>
+                        </div>
+                    </aside>
                 </div>
-                <p class="about-para">En fin de formation data, je me spécialise dans l'analyse et la Business Intelligence avec un fil conducteur constant : transformer des données complexes en informations utiles pour les équipes et les décideurs.</p>
-                <p class="about-para">Ce qui m'anime : prendre un problème concret — un reporting chronophage, des données éparpillées, une équipe sans visibilité sur ses résultats — et livrer une solution fiable, lisible, directement actionnable.</p>
-                <p class="about-para">Mes projets couvrent l'audit Excel, la BI sous Power BI, le Machine Learning appliqué et l'analyse Big Data avec PySpark. Dans chaque cas, je commence par comprendre le besoin métier avant d'écrire la moindre ligne de code.</p>
-                <div class="about-highlight">
-                    <i class="fa-solid fa-bullseye"></i>
-                    <span>Je recherche un CDI en Data Analyst, BI Analyst ou Analytics Engineer — dans une équipe où la donnée a un impact opérationnel direct.</span>
+
+                <div class="signal-grid" aria-label="Indicateurs clés">
+                    <div class="signal"><strong>6</strong><span>familles de postes data couvertes</span></div>
+                    <div class="signal"><strong>10+</strong><span>cas projet métier & solo valorisés</span></div>
+                    <div class="signal"><strong>90K</strong><span>formules et contrôles audités dans un cas Excel</span></div>
+                    <div class="signal"><strong>-80%</strong><span>temps de reporting visé sur les projets BI</span></div>
                 </div>
             </div>
-            <div class="about-profile-card">
-                <div class="about-avatar">MB</div>
-                <div class="about-name">Bakayoko Moussa</div>
-                <div class="about-role">Data Analyst · BI · Python</div>
-                <div class="about-divider"></div>
-                <div class="about-specs">
-                    <div class="about-spec">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>France — Open to remote</span>
+        </section>
+
+        <section class="section alt" id="roles">
+            <div class="shell">
+                <div class="section-head">
+                    <p class="eyebrow">Lecture recruteur</p>
+                    <h2 class="section-title">Un profil lisible pour plusieurs besoins data.</h2>
+                    <p class="section-copy">
+                        Le portfolio est structuré pour montrer rapidement ce que je peux apporter selon le poste :
+                        analyse, BI, data quality, marketing/product analytics, machine learning ou analytics engineering.
+                    </p>
+                </div>
+
+                <div class="role-grid">
+                    <article class="role-card">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        <h3>Data Analyst</h3>
+                        <p>Nettoyage, analyses SQL, statistiques, synthèses exécutives et recommandations actionnables.</p>
+                    </article>
+                    <article class="role-card">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <h3>BI Analyst</h3>
+                        <p>Modélisation Power BI, DAX, KPIs, dashboards automatisés et reporting direction.</p>
+                    </article>
+                    <article class="role-card">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <h3>Marketing / Product Analyst</h3>
+                        <p>Churn, conversion, segmentation RFM, campagnes, A/B testing et analyse de cohortes.</p>
+                    </article>
+                    <article class="role-card">
+                        <i class="fa-solid fa-brain"></i>
+                        <h3>Data Scientist Jr</h3>
+                        <p>Classification, clustering, NLP, recommandation, séries temporelles et explicabilité.</p>
+                    </article>
+                    <article class="role-card">
+                        <i class="fa-solid fa-diagram-project"></i>
+                        <h3>Analytics Engineer Jr</h3>
+                        <p>ETL/ELT, qualité des données, documentation, modèles analytiques et automatisation.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="projets">
+            <div class="shell">
+                <div class="section-head">
+                    <p class="eyebrow">Projets sélectionnés</p>
+                    <h2 class="section-title">Des cas concrets, racontés comme des problèmes d'entreprise.</h2>
+                    <p class="section-copy">
+                        Chaque projet met en avant le contexte, l'action menée, les outils et le résultat attendu.
+                        Les projets confidentiels sont présentés avec données anonymisées ; les projets solo sont reliés aux repos publics.
+                    </p>
+                </div>
+
+                <div class="filter-bar" aria-label="Filtres projets">
+                    <button class="filter-btn active" data-filter="all">Tous</button>
+                    <button class="filter-btn" data-filter="analytics">Analytics</button>
+                    <button class="filter-btn" data-filter="bi">BI / Power BI</button>
+                    <button class="filter-btn" data-filter="marketing">Marketing / CRM</button>
+                    <button class="filter-btn" data-filter="ml">ML / IA</button>
+                    <button class="filter-btn" data-filter="engineering">Data Engineering</button>
+                    <button class="filter-btn" data-filter="governance">Gouvernance</button>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card" data-category="analytics marketing governance" style="--accent:#b42318; --visual-bg:#fff1f0;">
+                        <div class="project-visual">
+                            <div class="mini-dashboard">
+                                <div class="mini-left">
+                                    <div class="mini-kpi"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                </div>
+                                <div class="mini-right">
+                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta"><span class="pill private">Cas entreprise</span><span class="pill">Data Analytics</span></div>
+                            <h3>Analyse de l'attrition client (Churn)</h3>
+                            <p>Analyse SQL d'une base clients pour identifier les profils qui résilient et prioriser les actions de rétention.</p>
+                            <div class="project-proof">
+                                <div class="proof-item"><strong>Segments</strong><span>à risque</span></div>
+                                <div class="proof-item"><strong>Plan</strong><span>rétention</span></div>
+                            </div>
+                            <div class="project-stack"><span class="tag">SQL</span><span class="tag">Statistiques</span><span class="tag">Reporting</span><span class="tag">Cohortes</span></div>
+                            <div class="project-actions">
+                                <button class="btn secondary" data-modal="churn">Étude de cas</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="bi analytics" style="--accent:#0f766e; --visual-bg:#e9f8f5;">
+                        <div class="project-visual">
+                            <div class="mini-dashboard">
+                                <div class="mini-left">
+                                    <div class="mini-kpi"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                </div>
+                                <div class="mini-right">
+                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta"><span class="pill">Repo public</span><span class="pill">Business Intelligence</span></div>
+                            <h3>Tableau de bord de suivi des ventes</h3>
+                            <p>Centralisation des ventes mensuelles, nettoyage des anomalies et dashboard de KPIs pour le pilotage commercial.</p>
+                            <div class="project-proof">
+                                <div class="proof-item"><strong>-80%</strong><span>reporting manuel</span></div>
+                                <div class="proof-item"><strong>5</strong><span>axes d'analyse</span></div>
+                            </div>
+                            <div class="project-stack"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">KPIs</span></div>
+                            <div class="project-actions">
+                                <button class="btn secondary" data-modal="sales">Étude de cas</button>
+                                <a class="btn ghost" href="https://github.com/MousBak/Analyse-des-Ventes-Power-bi" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="bi analytics engineering" style="--accent:#2563eb; --visual-bg:#eff6ff;">
+                        <div class="project-visual">
+                            <div class="mini-dashboard">
+                                <div class="mini-left">
+                                    <div class="mini-kpi"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                </div>
+                                <div class="mini-right">
+                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta"><span class="pill private">Cas entreprise</span><span class="pill">Data Mart</span></div>
+                            <h3>Modélisation d'un Data Mart Ventes</h3>
+                            <p>Conception d'un modèle en étoile pour rendre les analyses de vente accessibles en self-service aux équipes métier.</p>
+                            <div class="project-proof">
+                                <div class="proof-item"><strong>Star</strong><span>schema</span></div>
+                                <div class="proof-item"><strong>DAX</strong><span>KPIs fiables</span></div>
+                            </div>
+                            <div class="project-stack"><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Modélisation</span></div>
+                            <div class="project-actions">
+                                <button class="btn secondary" data-modal="datamart">Étude de cas</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="analytics governance" style="--accent:#b7791f; --visual-bg:#fff7ed;">
+                        <div class="project-visual">
+                            <div class="mini-dashboard">
+                                <div class="mini-left">
+                                    <div class="mini-kpi"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                </div>
+                                <div class="mini-right">
+                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta"><span class="pill private">Cas entreprise</span><span class="pill">Data Quality</span></div>
+                            <h3>Audit et nettoyage d'une base CRM</h3>
+                            <p>Détection des doublons, emails invalides, champs incomplets et règles de normalisation pour améliorer l'efficacité commerciale.</p>
+                            <div class="project-proof">
+                                <div class="proof-item"><strong>DQ</strong><span>score</span></div>
+                                <div class="proof-item"><strong>CRM</strong><span>fiabilisé</span></div>
+                            </div>
+                            <div class="project-stack"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Regex</span><span class="tag">Data Quality</span></div>
+                            <div class="project-actions">
+                                <button class="btn secondary" data-modal="crm">Étude de cas</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="marketing ml analytics" style="--accent:#7c3aed; --visual-bg:#f5f3ff;">
+                        <div class="project-visual">
+                            <div class="mini-dashboard">
+                                <div class="mini-left">
+                                    <div class="mini-kpi"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                </div>
+                                <div class="mini-right">
+                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta"><span class="pill">Repo public</span><span class="pill">CRM / Marketing</span></div>
+                            <h3>Segmentation clients RFM & K-Means</h3>
+                            <p>Création de segments clients actionnables pour personnaliser les campagnes et identifier les clients à réactiver.</p>
+                            <div class="project-proof">
+                                <div class="proof-item"><strong>4</strong><span>personas</span></div>
+                                <div class="proof-item"><strong>RFM</strong><span>scoring</span></div>
+                            </div>
+                            <div class="project-stack"><span class="tag">Python</span><span class="tag">K-Means</span><span class="tag">PCA</span><span class="tag">RFM</span></div>
+                            <div class="project-actions">
+                                <button class="btn secondary" data-modal="segmentation">Étude de cas</button>
+                                <a class="btn ghost" href="https://github.com/MousBak/Segmentation-de-la-client-le-d-une-entreprise-l-aide-de-KMeans-et-ACP-" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="ml marketing" style="--accent:#db2777; --visual-bg:#fdf2f8;">
+                        <div class="project-visual">
+                            <div class="mini-dashboard">
+                                <div class="mini-left">
+                                    <div class="mini-kpi"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                </div>
+                                <div class="mini-right">
+                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta"><span class="pill">Repo public</span><span class="pill">Recommandation</span></div>
+                            <h3>Moteur de recommandation produits / films</h3>
+                            <p>Système de suggestion basé sur le contenu pour améliorer l'engagement et pousser les bons produits aux bons utilisateurs.</p>
+                            <div class="project-proof">
+                                <div class="proof-item"><strong>NLP</strong><span>features</span></div>
+                                <div class="proof-item"><strong>&lt;1s</strong><span>reco</span></div>
+                            </div>
+                            <div class="project-stack"><span class="tag">Python</span><span class="tag">NLP</span><span class="tag">Cosine Similarity</span><span class="tag">Streamlit</span></div>
+                            <div class="project-actions">
+                                <button class="btn secondary" data-modal="recommendation">Étude de cas</button>
+                                <a class="btn ghost" href="https://github.com/MousBak/film-recommendation-system-" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="ml analytics" style="--accent:#0891b2; --visual-bg:#ecfeff;">
+                        <div class="project-visual">
+                            <div class="mini-dashboard">
+                                <div class="mini-left">
+                                    <div class="mini-kpi"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                </div>
+                                <div class="mini-right">
+                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta"><span class="pill">Repo public</span><span class="pill">Time Series</span></div>
+                            <h3>Prévision des ventes, prix et demande</h3>
+                            <p>Modèles de séries temporelles pour anticiper la demande ou les prix à court horizon et aider à planifier les décisions.</p>
+                            <div class="project-proof">
+                                <div class="proof-item"><strong>90j</strong><span>horizon</span></div>
+                                <div class="proof-item"><strong>95%</strong><span>intervalle</span></div>
+                            </div>
+                            <div class="project-stack"><span class="tag">Python</span><span class="tag">Prophet</span><span class="tag">Plotly</span><span class="tag">Forecast</span></div>
+                            <div class="project-actions">
+                                <button class="btn secondary" data-modal="forecast">Étude de cas</button>
+                                <a class="btn ghost" href="https://github.com/MousBak/Application-de-Pr-vision-des-Prix-de-Cl-ture-des-Actions2" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="ml analytics" style="--accent:#15803d; --visual-bg:#f0fdf4;">
+                        <div class="project-visual">
+                            <div class="mini-dashboard">
+                                <div class="mini-left">
+                                    <div class="mini-kpi"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                </div>
+                                <div class="mini-right">
+                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta"><span class="pill">Repo public</span><span class="pill">Risk / ML</span></div>
+                            <h3>Score de risque et détection de fraude</h3>
+                            <p>Classification supervisée pour identifier les dossiers ou transactions à risque, avec priorité donnée à l'explicabilité.</p>
+                            <div class="project-proof">
+                                <div class="proof-item"><strong>Risk</strong><span>scoring</span></div>
+                                <div class="proof-item"><strong>ML</strong><span>classification</span></div>
+                            </div>
+                            <div class="project-stack"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Classification</span><span class="tag">SHAP</span></div>
+                            <div class="project-actions">
+                                <button class="btn secondary" data-modal="risk">Étude de cas</button>
+                                <a class="btn ghost" href="https://github.com/MousBak/Fraud-detection-demo-app" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="engineering analytics" style="--accent:#475569; --visual-bg:#f1f5f9;">
+                        <div class="project-visual">
+                            <div class="mini-dashboard">
+                                <div class="mini-left">
+                                    <div class="mini-kpi"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                </div>
+                                <div class="mini-right">
+                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta"><span class="pill">Repo public</span><span class="pill">Big Data</span></div>
+                            <h3>Analyse Big Data de la criminalité à Chicago</h3>
+                            <p>Pipeline PySpark sur données volumineuses pour explorer les tendances, horaires et zones à risque.</p>
+                            <div class="project-proof">
+                                <div class="proof-item"><strong>20+</strong><span>années</span></div>
+                                <div class="proof-item"><strong>Map</strong><span>hotspots</span></div>
+                            </div>
+                            <div class="project-stack"><span class="tag">PySpark</span><span class="tag">Folium</span><span class="tag">Python</span><span class="tag">Big Data</span></div>
+                            <div class="project-actions">
+                                <button class="btn secondary" data-modal="chicago">Étude de cas</button>
+                                <a class="btn ghost" href="https://github.com/MousBak/Analyse-des-Donn-es-de-Criminalit-Chicago" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="engineering bi analytics" style="--accent:#0f766e; --visual-bg:#f0fdfa;">
+                        <div class="project-visual">
+                            <div class="mini-dashboard">
+                                <div class="mini-left">
+                                    <div class="mini-kpi"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                </div>
+                                <div class="mini-right">
+                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta"><span class="pill">Repo public</span><span class="pill">Operations</span></div>
+                            <h3>Optimisation des stocks et pilotage entrepôt</h3>
+                            <p>Analyse des flux d'entrée/sortie pour réduire les ruptures, suivre les produits critiques et améliorer le pilotage opérationnel.</p>
+                            <div class="project-proof">
+                                <div class="proof-item"><strong>ABC</strong><span>priorisation</span></div>
+                                <div class="proof-item"><strong>KPI</strong><span>stock</span></div>
+                            </div>
+                            <div class="project-stack"><span class="tag">SQL</span><span class="tag">BI</span><span class="tag">TypeScript</span><span class="tag">Operations</span></div>
+                            <div class="project-actions">
+                                <button class="btn secondary" data-modal="stock">Étude de cas</button>
+                                <a class="btn ghost" href="https://github.com/MousBak/Stockivoire" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="governance bi" style="--accent:#7c2d12; --visual-bg:#fff7ed;">
+                        <div class="project-visual">
+                            <div class="mini-dashboard">
+                                <div class="mini-left">
+                                    <div class="mini-kpi"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                </div>
+                                <div class="mini-right">
+                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta"><span class="pill private">Cas entreprise</span><span class="pill">Change / BI</span></div>
+                            <h3>Migration d'un reporting Excel vers dashboards automatisés</h3>
+                            <p>Remplacement de fichiers Excel manuels par une chaîne de reporting rafraîchie et documentée pour les équipes métier.</p>
+                            <div class="project-proof">
+                                <div class="proof-item"><strong>Daily</strong><span>refresh</span></div>
+                                <div class="proof-item"><strong>Guide</strong><span>utilisateur</span></div>
+                            </div>
+                            <div class="project-stack"><span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">Documentation</span><span class="tag">Formation</span></div>
+                            <div class="project-actions">
+                                <button class="btn secondary" data-modal="migration">Étude de cas</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="engineering governance" style="--accent:#334155; --visual-bg:#f8fafc;">
+                        <div class="project-visual">
+                            <div class="mini-dashboard">
+                                <div class="mini-left">
+                                    <div class="mini-kpi"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                </div>
+                                <div class="mini-right">
+                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta"><span class="pill private">Cas architecture</span><span class="pill">ETL / ELT</span></div>
+                            <h3>Pipeline ETL/ELT et contrôles de qualité</h3>
+                            <p>Récupération de données API et bases sources, transformation, contrôles qualité et chargement vers un modèle analytique exploitable.</p>
+                            <div class="project-proof">
+                                <div class="proof-item"><strong>Tests</strong><span>qualité</span></div>
+                                <div class="proof-item"><strong>Docs</strong><span>lineage</span></div>
+                            </div>
+                            <div class="project-stack"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">dbt</span><span class="tag">Airflow</span></div>
+                            <div class="project-actions">
+                                <button class="btn secondary" data-modal="etl">Étude de cas</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section alt" id="competences">
+            <div class="shell">
+                <div class="section-head">
+                    <p class="eyebrow">Compétences</p>
+                    <h2 class="section-title">Des outils au service d'un résultat métier.</h2>
+                    <p class="section-copy">
+                        Je ne présente pas seulement des technologies : chaque compétence correspond à un usage recruteur concret.
+                    </p>
+                </div>
+
+                <div class="skill-board">
+                    <aside class="toolbox">
+                        <h3>Stack principale</h3>
+                        <div class="tool-row">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Power BI</span>
+                            <span class="tag">DAX</span>
+                            <span class="tag">Power Query</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">NumPy</span>
+                            <span class="tag">Scikit-learn</span>
+                            <span class="tag">Prophet</span>
+                            <span class="tag">PySpark</span>
+                            <span class="tag">Plotly</span>
+                            <span class="tag">Streamlit</span>
+                            <span class="tag">Excel VBA</span>
+                            <span class="tag">ETL</span>
+                            <span class="tag">Data Quality</span>
+                            <span class="tag">Git</span>
+                        </div>
+                    </aside>
+
+                    <div class="capability-list">
+                        <article class="capability">
+                            <i class="fa-solid fa-filter-circle-dollar"></i>
+                            <div>
+                                <h3>Analytics métier & statistiques</h3>
+                                <p>Churn, ventes, promotions, A/B testing, cohortes, analyse de tendances et synthèse de recommandations.</p>
+                            </div>
+                        </article>
+                        <article class="capability">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <div>
+                                <h3>BI, dashboards & reporting automatisé</h3>
+                                <p>KPIs, modèles en étoile, DAX, Power Query, tableaux de bord directionnels et rapports exploitables.</p>
+                            </div>
+                        </article>
+                        <article class="capability">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <div>
+                                <h3>Qualité, gouvernance & documentation</h3>
+                                <p>Détection d'anomalies, doublons, règles métier, dictionnaire de données, traçabilité et adoption utilisateur.</p>
+                            </div>
+                        </article>
+                        <article class="capability">
+                            <i class="fa-solid fa-robot"></i>
+                            <div>
+                                <h3>Machine Learning utile</h3>
+                                <p>Classification, clustering, NLP, recommandation et prévision, avec priorité à l'interprétation business.</p>
+                            </div>
+                        </article>
+                        <article class="capability">
+                            <i class="fa-solid fa-gears"></i>
+                            <div>
+                                <h3>Automatisation & pipelines analytiques</h3>
+                                <p>Scripts Python, ETL/ELT, contrôles qualité, refresh récurrent et préparation de données pour les analystes.</p>
+                            </div>
+                        </article>
                     </div>
-                    <div class="about-spec">
-                        <i class="fa-solid fa-briefcase"></i>
-                        <span>CDI recherché</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="approche">
+            <div class="shell">
+                <div class="section-head">
+                    <p class="eyebrow">Méthode</p>
+                    <h2 class="section-title">Une approche simple : comprendre, fiabiliser, livrer, faire adopter.</h2>
+                    <p class="section-copy">
+                        Je travaille pour que le livrable soit utilisable par une équipe, pas seulement correct techniquement.
+                    </p>
+                </div>
+
+                <div class="method-grid">
+                    <article class="method-card">
+                        <span class="method-number">1</span>
+                        <h3>Cadrer la décision</h3>
+                        <p>Clarifier le besoin, les utilisateurs, les KPIs et la décision à prendre avant de modéliser.</p>
+                    </article>
+                    <article class="method-card">
+                        <span class="method-number">2</span>
+                        <h3>Fiabiliser la donnée</h3>
+                        <p>Contrôler les sources, gérer les doublons, valeurs manquantes, règles métier et définitions.</p>
+                    </article>
+                    <article class="method-card">
+                        <span class="method-number">3</span>
+                        <h3>Construire l'analyse</h3>
+                        <p>SQL, Python, Power BI ou ML selon le problème, avec une restitution claire et testable.</p>
+                    </article>
+                    <article class="method-card">
+                        <span class="method-number">4</span>
+                        <h3>Documenter et transmettre</h3>
+                        <p>Expliquer les choix, rendre le dashboard compréhensible et accompagner l'utilisation métier.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section alt" id="apropos">
+            <div class="shell">
+                <div class="section-head">
+                    <p class="eyebrow">À propos</p>
+                    <h2 class="section-title">Un profil data junior, mais déjà orienté impact.</h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card">
+                        <p>
+                            Mon fil conducteur : prendre des données dispersées, parfois peu fiables, et les transformer en indicateurs
+                            utiles pour les équipes métier. J'aime les projets où l'analyse débouche sur une action : réduire un churn,
+                            améliorer une campagne, automatiser un reporting, prioriser un stock ou expliquer un risque.
+                        </p>
+                        <p>
+                            Mes projets couvrent l'analytics généraliste, la BI, le CRM/marketing, le machine learning, la data quality
+                            et l'automatisation. Cette largeur me permet de dialoguer avec des profils business comme avec des profils techniques.
+                        </p>
+                        <p>
+                            Je recherche une équipe qui veut construire des analyses propres, des dashboards réellement utilisés
+                            et des pipelines suffisamment fiables pour soutenir les décisions au quotidien.
+                        </p>
                     </div>
-                    <div class="about-spec">
-                        <i class="fa-solid fa-calendar"></i>
-                        <span>Disponible maintenant</span>
+
+                    <div class="about-card">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <strong>Ce que je livre</strong>
+                                <span>Dashboards, analyses, modèles, scripts automatisés, rapports exécutifs et documentation.</span>
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Ce qui me différencie</strong>
+                                <span>Je relie les outils data au besoin métier : un KPI doit servir une décision concrète.</span>
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Environnement visé</strong>
+                                <span>Data Analyst, BI Analyst, Product/Marketing Analyst, Data Scientist Jr ou Analytics Engineer Jr.</span>
+                            </div>
+                        </div>
                     </div>
-                    <!-- ✅ TÉLÉPHONE AJOUTÉ -->
-                    <div class="about-spec">
-                        <i class="fa-solid fa-phone"></i>
-                        <a href="tel:+33766354050">07 66 35 40 50</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="shell contact-grid">
+                <div>
+                    <p class="eyebrow">Contact</p>
+                    <h2 class="section-title">Vous recrutez un profil data qui sait parler métier ?</h2>
+                    <p class="section-copy">
+                        Je suis disponible pour échanger sur une opportunité Data Analyst, BI Analyst, Analytics Engineer junior
+                        ou un poste data orienté reporting, qualité et décision.
+                    </p>
+                    <div class="contact-actions">
+                        <a class="btn primary" href="mailto:moussabakayoko098@gmail.com?subject=Opportunite%20Data%20-%20Bakayoko%20Moussa">
+                            <i class="fa-solid fa-envelope"></i>
+                            Envoyer un email
+                        </a>
+                        <a class="btn secondary" href="tel:+33766354050">
+                            <i class="fa-solid fa-phone"></i>
+                            07 66 35 40 50
+                        </a>
                     </div>
-                    <!-- ✅ EMAIL CORRIGÉ -->
-                    <div class="about-spec">
+                </div>
+
+                <aside class="contact-card">
+                    <a class="contact-line" href="mailto:moussabakayoko098@gmail.com">
                         <i class="fa-solid fa-envelope"></i>
-                        <a href="mailto:moussabakayoko098@gmail.com" style="font-size:0.75rem;">moussabakayoko098@gmail.com</a>
-                    </div>
-                </div>
-                <div class="about-stack">
-                    <span class="about-stack-tag">Power BI</span>
-                    <span class="about-stack-tag">SQL</span>
-                    <span class="about-stack-tag">Python</span>
-                    <span class="about-stack-tag">DAX</span>
-                    <span class="about-stack-tag">Excel VBA</span>
-                </div>
-                <div class="about-actions">
-                    <a href="https://www.linkedin.com/in/moussa-bakayoko-3b1946152/" target="_blank" rel="noopener" class="btn btn-linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                    <a href="CV_Bakayoko_Moussa.pdf" download class="btn btn-cv"><i class="fa-solid fa-download"></i> Télécharger CV</a>
-                </div>
+                        <span>moussabakayoko098@gmail.com</span>
+                    </a>
+                    <a class="contact-line" href="https://www.linkedin.com/in/moussa-bakayoko-3b1946152/" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a class="contact-line" href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub repositories</span>
+                    </a>
+                    <a class="contact-line" href="https://github.com/MousBak/Rapports" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <span>Rapports de projets</span>
+                    </a>
+                </aside>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- CONTACT -->
-    <section class="contact-section" id="contact">
-        <div class="contact-inner">
-            <div class="contact-badge"><span></span>Disponible pour un premier échange</div>
-            <h2>Un projet data à mener ?</h2>
-            <p>Je suis ouvert aux opportunités en CDI — Data Analyst, BI Analyst, Analytics Engineer. N'hésitez pas à me contacter pour discuter de votre contexte et voir comment je peux y contribuer.</p>
-            <div class="contact-actions">
-                <!-- ✅ EMAIL CORRIGÉ -->
-                <a href="mailto:moussabakayoko098@gmail.com" class="btn btn-email">
-                    <i class="fa-solid fa-envelope"></i> Envoyer un email
-                </a>
-                <!-- ✅ TÉLÉPHONE AJOUTÉ -->
-                <a href="tel:+33766354050" class="btn btn-phone">
-                    <i class="fa-solid fa-phone"></i> 07 66 35 40 50
-                </a>
-                <a href="https://www.linkedin.com/in/moussa-bakayoko-3b1946152/" target="_blank" rel="noopener" class="btn btn-linkedin">
-                    <i class="fa-brands fa-linkedin"></i> Voir mon LinkedIn
-                </a>
-            </div>
-            <div class="contact-secondary">
-                <a href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
-                <span>·</span>
-                <a href="CV_Bakayoko_Moussa.pdf" download><i class="fa-solid fa-download"></i> Télécharger mon CV</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-brand"><strong>Bakayoko Moussa</strong> · Data Analyst & BI</div>
-            <div class="footer-links-row">
-                <!-- ✅ EMAIL CORRIGÉ PARTOUT -->
-                <a href="mailto:moussabakayoko098@gmail.com">moussabakayoko098@gmail.com</a>
-                <a href="tel:+33766354050">07 66 35 40 50</a>
-                <a href="https://www.linkedin.com/in/moussa-bakayoko-3b1946152/" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener">GitHub</a>
-            </div>
-            <div class="footer-copy">© 2026</div>
+        <div class="shell footer-inner">
+            <span>© 2026 Bakayoko Moussa · Data Analyst & BI</span>
+            <span>SQL · Power BI · Python · ML · ETL · Data Quality</span>
         </div>
     </footer>
 
-    <!-- MODALS -->
-    <div class="modal" id="modal1">
-        <div class="modal-content">
-            <div class="modal-header"><h2 class="modal-title">Audit Dashboard Marchés Publics</h2><button class="modal-close" onclick="closeModal('modal1')">✕</button></div>
-            <div class="modal-body">
-                <div class="modal-block"><h3>Contexte</h3><p>Administration publique — Outil de suivi de marchés publics utilisé par une équipe décisionnelle pour gérer 9 000 dossiers administratifs critiques.</p></div>
-                <div class="modal-block"><h3>Objectif business</h3><p>Fiabiliser le suivi des dossiers et automatiser la production du rapport hebdomadaire qui prenait 4 heures de travail manuel.</p></div>
-                <div class="modal-case-grid">
-                    <div class="modal-case-item"><h4>Problème résolu</h4><p>90 000 formules Excel erronées causant des écarts budgétaires. Consolidation manuelle hebdomadaire de 4h. Zéro traçabilité des erreurs et des corrections.</p></div>
-                    <div class="modal-case-item"><h4>Solution technique</h4><p>Audit systématique des formules avec identification des erreurs. Correction complète du modèle et structuration des données. Automatisation VBA du reporting avec génération automatique des documents.</p></div>
+    <div class="modal" id="caseModal" aria-hidden="true">
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-head">
+                <div>
+                    <p class="eyebrow" id="modalEyebrow">Étude de cas</p>
+                    <h3 id="modalTitle"></h3>
                 </div>
-                <div class="modal-impact"><h3>Impact réel / résultats mesurés</h3><p>Le temps d'édition du rapport est passé de plusieurs heures à 3 secondes. Zéro erreur humaine depuis le déploiement. Traçabilité complète des calculs et modifications. Économie de 4 heures par semaine pour l'équipe administrative.</p></div>
+                <button class="modal-close" id="modalClose" aria-label="Fermer">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
             </div>
-            <div class="modal-footer">
-                <a href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener" class="btn btn-github"><i class="fa-brands fa-github"></i> Code</a>
-                <a href="https://github.com/MousBak/Rapports" target="_blank" rel="noopener" class="btn btn-report"><i class="fa-solid fa-file-pdf"></i> Rapport</a>
-                <button class="btn btn-secondary" onclick="closeModal('modal1')">Fermer</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" id="modal2">
-        <div class="modal-content">
-            <div class="modal-header"><h2 class="modal-title">Moteur de Recommandation IA</h2><button class="modal-close" onclick="closeModal('modal2')">✕</button></div>
-            <div class="modal-body">
-                <div class="modal-block"><h3>Contexte</h3><p>Plateforme VOD cherchant à réduire son taux de désabonnement par de meilleures recommandations de contenu personnalisé pour chaque utilisateur.</p></div>
-                <div class="modal-block"><h3>Objectif business</h3><p>Créer un moteur de suggestion IA pour fidéliser les utilisateurs via un contenu adapté à leurs goûts et historique de visionnage.</p></div>
-                <div class="modal-case-grid">
-                    <div class="modal-case-item"><h4>Problème résolu</h4><p>Recommandations génériques et non pertinentes. Désabonnement par manque d'engagement. Aucun système de scoring comportemental pour les utilisateurs.</p></div>
-                    <div class="modal-case-item"><h4>Solution technique</h4><p>Moteur NLP basé sur la similarité cosinus des métadonnées films. Traitement du contenu et des caractéristiques utilisateur. Déploiement web via Streamlit pour tests en conditions réelles.</p></div>
-                </div>
-                <div class="modal-impact"><h3>Impact réel / résultats mesurés</h3><p>+40% de pertinence estimée sur les recommandations. Application déployée et testée en conditions réelles. Réduction du taux de rebond sur les recommandations de 30%.</p></div>
-            </div>
-            <div class="modal-footer">
-                <a href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener" class="btn btn-github"><i class="fa-brands fa-github"></i> Code</a>
-                <a href="https://github.com/MousBak/Rapports" target="_blank" rel="noopener" class="btn btn-report"><i class="fa-solid fa-file-pdf"></i> Rapport</a>
-                <button class="btn btn-secondary" onclick="closeModal('modal2')">Fermer</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" id="modal3">
-        <div class="modal-content">
-            <div class="modal-header"><h2 class="modal-title">Dashboard Pilotage Ventes</h2><button class="modal-close" onclick="closeModal('modal3')">✕</button></div>
-            <div class="modal-body">
-                <div class="modal-block"><h3>Contexte</h3><p>Équipe commerciale multi-régions (5 régions) sans vue consolidée en temps réel de ses performances et des KPIs critiques pour les réunions COMEX.</p></div>
-                <div class="modal-block"><h3>Objectif business</h3><p>Centraliser les données de ventes de toutes les régions et éliminer le calcul manuel des KPIs pour les réunions exécutives.</p></div>
-                <div class="modal-case-grid">
-                    <div class="modal-case-item"><h4>Problème résolu</h4><p>Données dispersées en silos régionaux. Aucune visibilité en temps réel pour le COMEX. Réunions basées sur des données obsolètes d'une semaine.</p></div>
-                    <div class="modal-case-item"><h4>Solution technique</h4><p>Modélisation en étoile sous Power BI. KPIs fiables créés en DAX. Actualisation automatique des données. Dashboard interactif avec drill-down par région, produit, période.</p></div>
-                </div>
-                <div class="modal-impact"><h3>Impact réel / résultats mesurés</h3><p>-80% de temps de traitement manuel. Visibilité temps réel pour le COMEX. Réunions exécutives accélérées. Meilleure détection des anomalies commerciales.</p></div>
-            </div>
-            <div class="modal-footer">
-                <a href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener" class="btn btn-github"><i class="fa-brands fa-github"></i> Code</a>
-                <a href="https://github.com/MousBak/Rapports" target="_blank" rel="noopener" class="btn btn-report"><i class="fa-solid fa-file-pdf"></i> Rapport</a>
-                <button class="btn btn-secondary" onclick="closeModal('modal3')">Fermer</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" id="modal4">
-        <div class="modal-content">
-            <div class="modal-header"><h2 class="modal-title">Analyse Big Data — Criminalité Chicago</h2><button class="modal-close" onclick="closeModal('modal4')">✕</button></div>
-            <div class="modal-body">
-                <div class="modal-block"><h3>Contexte</h3><p>Analyse de 20 ans de données criminelles de la ville de Chicago pour optimiser l'allocation des ressources sécuritaires.</p></div>
-                <div class="modal-block"><h3>Objectif business</h3><p>Cartographier les hotspots de criminalité par saison, horaire et type de délit pour allouer les budgets de patrouille de façon optimale.</p></div>
-                <div class="modal-case-grid">
-                    <div class="modal-case-item"><h4>Problème résolu</h4><p>Volume de données (millions de lignes) impossible à traiter avec Excel. Pas de vision géographique exploitable. Pas de corrélation temporelle identifiée.</p></div>
-                    <div class="modal-case-item"><h4>Solution technique</h4><p>Pipeline distribué PySpark pour ingestion et nettoyage des 20 ans de données. Cartographie interactive Folium des hotspots.</p></div>
-                </div>
-                <div class="modal-impact"><h3>Impact réel / résultats mesurés</h3><p>Identification claire des hotspots. Base analytique robuste pour ciblage spatial des patrouilles. Temps de traitement : 15 minutes pour 20 ans de données.</p></div>
-            </div>
-            <div class="modal-footer">
-                <a href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener" class="btn btn-github"><i class="fa-brands fa-github"></i> Code</a>
-                <a href="https://github.com/MousBak/Rapports" target="_blank" rel="noopener" class="btn btn-report"><i class="fa-solid fa-file-pdf"></i> Rapport</a>
-                <button class="btn btn-secondary" onclick="closeModal('modal4')">Fermer</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" id="modal5">
-        <div class="modal-content">
-            <div class="modal-header"><h2 class="modal-title">Segmentation Clients (K-Means)</h2><button class="modal-close" onclick="closeModal('modal5')">✕</button></div>
-            <div class="modal-body">
-                <div class="modal-block"><h3>Contexte</h3><p>E-commerçant souhaitant optimiser ses dépenses publicitaires par un meilleur ciblage de sa base clients avec approche comportementale.</p></div>
-                <div class="modal-block"><h3>Objectif business</h3><p>Découvrir les profils types d'acheteurs et affecter des offres publicitaires précises et pertinentes à chaque segment.</p></div>
-                <div class="modal-case-grid">
-                    <div class="modal-case-item"><h4>Problème résolu</h4><p>Campagnes publicitaires uniformes sur toute la base clients. Budget marketing gaspillé. Aucune distinction comportementale.</p></div>
-                    <div class="modal-case-item"><h4>Solution technique</h4><p>Clustering K-Means sur données RFM. Réduction dimensionnelle PCA. 4 personas distincts créés avec profils détaillés.</p></div>
-                </div>
-                <div class="modal-impact"><h3>Impact réel / résultats mesurés</h3><p>+25% de précision estimée sur les campagnes. 4 profils actionnables livrés. ROI des campagnes amélioré par ciblage spécifique.</p></div>
-            </div>
-            <div class="modal-footer">
-                <a href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener" class="btn btn-github"><i class="fa-brands fa-github"></i> Code</a>
-                <a href="https://github.com/MousBak/Rapports" target="_blank" rel="noopener" class="btn btn-report"><i class="fa-solid fa-file-pdf"></i> Rapport</a>
-                <button class="btn btn-secondary" onclick="closeModal('modal5')">Fermer</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" id="modal6">
-        <div class="modal-content">
-            <div class="modal-header"><h2 class="modal-title">Prévision Boursière — Prophet</h2><button class="modal-close" onclick="closeModal('modal6')">✕</button></div>
-            <div class="modal-body">
-                <div class="modal-block"><h3>Contexte</h3><p>Décision de placement de trésorerie à court terme sur des valeurs tech (GAFAM) avec besoin de prévisions fiables à court horizon.</p></div>
-                <div class="modal-block"><h3>Objectif business</h3><p>Produire des prévisions de cours automatisées et fiables pour guider les décisions d'investissement à 90 jours.</p></div>
-                <div class="modal-case-grid">
-                    <div class="modal-case-item"><h4>Problème résolu</h4><p>Décisions d'investissement sans données prévisionnelles structurées. Dépendance aux analyses manuelles coûteuses.</p></div>
-                    <div class="modal-case-item"><h4>Solution technique</h4><p>Modèle Prophet sur historique Yahoo Finance. Visualisations interactives Plotly. Intervalles de confiance à 95% pour chaque prévision.</p></div>
-                </div>
-                <div class="modal-impact"><h3>Impact réel / résultats mesurés</h3><p>Prévisions automatisées à 90 jours disponibles en quelques secondes. Aide à la décision financière structurée. Système scalable pour autres valeurs.</p></div>
-            </div>
-            <div class="modal-footer">
-                <a href="https://github.com/MousBak?tab=repositories" target="_blank" rel="noopener" class="btn btn-github"><i class="fa-brands fa-github"></i> Code</a>
-                <a href="https://github.com/MousBak/Rapports" target="_blank" rel="noopener" class="btn btn-report"><i class="fa-solid fa-file-pdf"></i> Rapport</a>
-                <button class="btn btn-secondary" onclick="closeModal('modal6')">Fermer</button>
-            </div>
+            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-foot" id="modalFoot"></div>
         </div>
     </div>
 
     <script>
-        const navbar = document.querySelector('.navbar');
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
+        const caseStudies = {
+            churn: {
+                eyebrow: "Data Analytics · Churn",
+                title: "Analyse de l'attrition client",
+                blocks: [
+                    ["Contexte", "Une base clients contient les informations d'abonnement, d'ancienneté, d'activité et de facturation. L'enjeu est de comprendre quels profils résilient et pourquoi."],
+                    ["Actions", "Nettoyage SQL, segmentation par ancienneté/prix/activité, analyse des variations d'usage et construction d'un rapport de synthèse orienté rétention."],
+                    ["Impact recruteur", "Montre une capacité à partir d'une donnée brute pour produire des recommandations business directement utiles aux équipes CRM ou Customer Success."]
+                ]
+            },
+            sales: {
+                eyebrow: "BI · Power BI",
+                title: "Tableau de bord de suivi des ventes",
+                repo: "https://github.com/MousBak/Analyse-des-Ventes-Power-bi",
+                blocks: [
+                    ["Contexte", "Les données de ventes mensuelles sont consolidées pour suivre chiffre d'affaires, marges, produits, zones et tendances."],
+                    ["Actions", "Nettoyage des anomalies, modélisation Power BI, KPIs DAX, filtres interactifs et lecture directionnelle des performances."],
+                    ["Impact recruteur", "Projet central pour un poste BI Analyst : qualité du modèle, clarté visuelle, automatisation du reporting et vision métier."]
+                ]
+            },
+            datamart: {
+                eyebrow: "Analytics Engineering · BI",
+                title: "Modélisation d'un Data Mart Ventes",
+                blocks: [
+                    ["Contexte", "Les équipes métier ont besoin d'un modèle fiable pour analyser les ventes sans dépendre de fichiers manuels."],
+                    ["Actions", "Définition des tables de faits et dimensions, règles de transformation, métriques DAX et documentation des définitions métier."],
+                    ["Impact recruteur", "Montre une compréhension de la modélisation décisionnelle, utile pour BI Analyst et Analytics Engineer junior."]
+                ]
+            },
+            crm: {
+                eyebrow: "Data Quality · CRM",
+                title: "Audit et nettoyage d'une base CRM",
+                blocks: [
+                    ["Contexte", "Une base CRM contient doublons, emails invalides, champs incomplets et formats hétérogènes, ce qui réduit l'efficacité commerciale."],
+                    ["Actions", "Détection des doublons, contrôles de validité, normalisation des champs, score de complétude et règles de correction réutilisables."],
+                    ["Impact recruteur", "Valorise la rigueur, la qualité des données et la capacité à améliorer un processus opérationnel sans sur-complexifier."]
+                ]
+            },
+            segmentation: {
+                eyebrow: "Marketing Analytics · ML",
+                title: "Segmentation clients RFM & K-Means",
+                repo: "https://github.com/MousBak/Segmentation-de-la-client-le-d-une-entreprise-l-aide-de-KMeans-et-ACP-",
+                blocks: [
+                    ["Contexte", "Une équipe marketing veut personnaliser ses campagnes au lieu d'envoyer le même message à toute sa base."],
+                    ["Actions", "Calcul des scores RFM, clustering K-Means, réduction PCA, interprétation des segments et recommandations de ciblage."],
+                    ["Impact recruteur", "Montre le lien entre machine learning et action marketing : personas, ciblage, réactivation et priorisation."]
+                ]
+            },
+            recommendation: {
+                eyebrow: "NLP · Recommandation",
+                title: "Moteur de recommandation produits / films",
+                repo: "https://github.com/MousBak/film-recommendation-system-",
+                blocks: [
+                    ["Contexte", "Une plateforme veut améliorer l'engagement en proposant des contenus ou produits pertinents selon les similarités."],
+                    ["Actions", "Préparation des métadonnées, vectorisation, similarité cosinus, interface de test et restitution des recommandations."],
+                    ["Impact recruteur", "Projet utile pour Data Scientist junior : NLP appliqué, mise en production légère et logique produit."]
+                ]
+            },
+            forecast: {
+                eyebrow: "Time Series · Forecasting",
+                title: "Prévision des ventes, prix et demande",
+                repo: "https://github.com/MousBak/Application-de-Pr-vision-des-Prix-de-Cl-ture-des-Actions2",
+                blocks: [
+                    ["Contexte", "Le besoin est d'anticiper l'évolution d'une série dans le temps pour mieux planifier la production, les stocks ou la décision financière."],
+                    ["Actions", "Collecte des historiques, préparation temporelle, modèle Prophet, visualisation Plotly et lecture des intervalles d'incertitude."],
+                    ["Impact recruteur", "Montre une capacité à traiter un problème prédictif complet, du dataset à l'aide à la décision."]
+                ]
+            },
+            risk: {
+                eyebrow: "Risk Analytics · ML",
+                title: "Score de risque et détection de fraude",
+                repo: "https://github.com/MousBak/Fraud-detection-demo-app",
+                blocks: [
+                    ["Contexte", "Les équipes risk ou finance doivent prioriser les dossiers à risque et comprendre les facteurs qui expliquent une alerte."],
+                    ["Actions", "Préparation des variables, classification supervisée, scoring, suivi des erreurs et approche d'explicabilité pour rendre le modèle lisible."],
+                    ["Impact recruteur", "Convient aux postes Risk, Financial Data Analyst ou Data Scientist junior, avec un bon équilibre entre technique et interprétation."]
+                ]
+            },
+            chicago: {
+                eyebrow: "Big Data · PySpark",
+                title: "Analyse Big Data de la criminalité à Chicago",
+                repo: "https://github.com/MousBak/Analyse-des-Donn-es-de-Criminalit-Chicago",
+                blocks: [
+                    ["Contexte", "Un historique volumineux d'incidents doit être exploré pour comprendre les tendances temporelles et géographiques."],
+                    ["Actions", "Traitement PySpark, agrégations par type de délit, période et zone, puis cartographie des hotspots avec Folium."],
+                    ["Impact recruteur", "Montre la capacité à dépasser Excel pour traiter de grands volumes, analyser et restituer spatialement."]
+                ]
+            },
+            stock: {
+                eyebrow: "Operations Analytics",
+                title: "Optimisation des stocks et pilotage entrepôt",
+                repo: "https://github.com/MousBak/Stockivoire",
+                blocks: [
+                    ["Contexte", "Les équipes opérations veulent éviter les ruptures tout en gardant les coûts de stockage sous contrôle."],
+                    ["Actions", "Analyse des flux, priorisation ABC, suivi des produits critiques, indicateurs de rotation et alertes de pilotage."],
+                    ["Impact recruteur", "Parle aux recruteurs supply chain, ops et BI : l'analyse sert directement une décision terrain."]
+                ]
+            },
+            migration: {
+                eyebrow: "BI · Conduite du changement",
+                title: "Migration d'un reporting Excel vers dashboards automatisés",
+                blocks: [
+                    ["Contexte", "Des équipes produisent des rapports manuels dans Excel, avec risques d'erreurs et faible fréquence de mise à jour."],
+                    ["Actions", "Inventaire des rapports, définition des métriques, automatisation du refresh, dashboard cible et documentation utilisateur."],
+                    ["Impact recruteur", "Valorise la capacité à moderniser un reporting existant et à accompagner l'adoption par les utilisateurs métiers."]
+                ]
+            },
+            etl: {
+                eyebrow: "Data Engineering · Data Quality",
+                title: "Pipeline ETL/ELT et contrôles de qualité",
+                blocks: [
+                    ["Contexte", "Des sources API et bases opérationnelles doivent alimenter un modèle analytique fiable et réutilisable."],
+                    ["Actions", "Extraction, transformation SQL/Python, contrôles de qualité, documentation des règles et préparation pour orchestration récurrente."],
+                    ["Impact recruteur", "Positionne le profil sur Analytics Engineering junior : data fiable, modèles documentés, automatisation et DataOps."]
+                ]
+            }
+        };
 
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        const navLinks = document.getElementById("navLinks");
+        const menuToggle = document.getElementById("menuToggle");
+        const modal = document.getElementById("caseModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalEyebrow = document.getElementById("modalEyebrow");
+        const modalBody = document.getElementById("modalBody");
+        const modalFoot = document.getElementById("modalFoot");
+        const modalClose = document.getElementById("modalClose");
+
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("open");
+            document.body.classList.toggle("menu-open", navLinks.classList.contains("open"));
         });
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.mobile-menu-link').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
+        document.querySelectorAll(".nav-links a").forEach((link) => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                document.body.classList.remove("menu-open");
             });
         });
 
-        const navLinks = document.querySelectorAll('.nav-link');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-                    if (active) active.classList.add('active');
-                }
-            });
-        }, { threshold: 0.3 });
-        document.querySelectorAll('#projets, #competences, #approche, #apropos, #contact').forEach(s => observer.observe(s));
+        document.querySelectorAll(".filter-btn").forEach((button) => {
+            button.addEventListener("click", () => {
+                document.querySelectorAll(".filter-btn").forEach((item) => item.classList.remove("active"));
+                button.classList.add("active");
+                const filter = button.dataset.filter;
 
-        const fadeObs = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-up').forEach(el => fadeObs.observe(el));
-
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filter = btn.dataset.filter;
-                document.querySelectorAll('.proj-card').forEach(card => {
-                    card.classList.toggle('hidden', filter !== 'all' && !card.classList.contains(`cat-${filter}`));
+                document.querySelectorAll(".project-card").forEach((card) => {
+                    const categories = card.dataset.category.split(" ");
+                    card.classList.toggle("hidden", filter !== "all" && !categories.includes(filter));
                 });
             });
         });
 
-        function openModal(id) {
-            const m = document.getElementById(id);
-            if (m) { m.classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function openCase(id) {
+            const item = caseStudies[id];
+            if (!item) return;
+
+            modalTitle.textContent = item.title;
+            modalEyebrow.textContent = item.eyebrow;
+            modalBody.innerHTML = item.blocks.map(([title, copy]) => `
+                <div class="case-block">
+                    <h4>${title}</h4>
+                    <p>${copy}</p>
+                </div>
+            `).join("");
+
+            modalFoot.innerHTML = `
+                ${item.repo ? `<a class="btn primary" href="${item.repo}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Voir le repo</a>` : ""}
+                <a class="btn secondary" href="mailto:moussabakayoko098@gmail.com?subject=Question%20sur%20le%20projet%20${encodeURIComponent(item.title)}"><i class="fa-solid fa-envelope"></i> Discuter du projet</a>
+            `;
+
+            modal.classList.add("active");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("menu-open");
+            modalClose.focus();
         }
-        function closeModal(id) {
-            const m = document.getElementById(id);
-            if (m) { m.classList.remove('active'); document.body.style.overflow = 'auto'; }
+
+        function closeCase() {
+            modal.classList.remove("active");
+            modal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("menu-open");
         }
-        document.querySelectorAll('.modal').forEach(m => {
-            m.addEventListener('click', e => { if (e.target === m) closeModal(m.id); });
+
+        document.querySelectorAll("[data-modal]").forEach((button) => {
+            button.addEventListener("click", () => openCase(button.dataset.modal));
         });
-        document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') document.querySelectorAll('.modal.active').forEach(m => closeModal(m.id));
+
+        modalClose.addEventListener("click", closeCase);
+        modal.addEventListener("click", (event) => {
+            if (event.target === modal) closeCase();
         });
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && document.querySelector(href)) {
-                    e.preventDefault();
-                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
-                }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && modal.classList.contains("active")) closeCase();
+        });
+
+        const sections = document.querySelectorAll("main section[id]");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                document.querySelectorAll(".nav-links a").forEach((link) => {
+                    link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
+                });
             });
-        });
+        }, { threshold: 0.24 });
+
+        sections.forEach((section) => observer.observe(section));
     </script>
 </body>
 </html>
