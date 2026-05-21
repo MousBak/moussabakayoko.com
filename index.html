@@ -1293,7 +1293,7 @@
 
                 <div class="signal-grid" aria-label="Indicateurs clés">
                     <div class="signal"><strong>6</strong><span>familles de postes data couvertes</span></div>
-                    <div class="signal"><strong>10+</strong><span>cas projet métier & solo valorisés</span></div>
+                    <div class="signal"><strong>12+</strong><span>cas projet métier & solo valorisés</span></div>
                     <div class="signal"><strong>90K</strong><span>formules et contrôles audités dans un cas Excel</span></div>
                     <div class="signal"><strong>-80%</strong><span>temps de reporting visé sur les projets BI</span></div>
                 </div>
@@ -1530,6 +1530,36 @@
                         </div>
                     </article>
 
+                    <article class="project-card" data-category="bi analytics" style="--accent:#0369a1; --visual-bg:#f0f9ff;">
+                        <div class="project-visual">
+                            <div class="mini-dashboard">
+                                <div class="mini-left">
+                                    <div class="mini-kpi"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                </div>
+                                <div class="mini-right">
+                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta"><span class="pill">Repo public</span><span class="pill">Power BI</span></div>
+                            <h3>Budget de consommation annuel avec Power BI</h3>
+                            <p>Suivi des dépenses par catégorie, évolution mensuelle et lecture des postes à optimiser pour piloter le budget.</p>
+                            <div class="project-proof">
+                                <div class="proof-item"><strong>Budget</strong><span>catégorisé</span></div>
+                                <div class="proof-item"><strong>Power</strong><span>Query</span></div>
+                            </div>
+                            <div class="project-stack"><span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">SQL</span><span class="tag">Power Query</span></div>
+                            <div class="project-actions">
+                                <button class="btn secondary" data-modal="budget">Étude de cas</button>
+                                <a class="btn ghost" href="https://github.com/MousBak/Consommation-du-Budget-Power-bi" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a>
+                            </div>
+                        </div>
+                    </article>
+
                     <article class="project-card" data-category="bi analytics engineering" style="--accent:#2563eb; --visual-bg:#eff6ff;">
                         <div class="project-visual">
                             <div class="mini-dashboard">
@@ -1734,6 +1764,36 @@
                             <div class="project-actions">
                                 <button class="btn secondary" data-modal="chicago">Étude de cas</button>
                                 <a class="btn ghost" href="https://github.com/MousBak/Analyse-des-Donn-es-de-Criminalit-Chicago" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="analytics marketing" style="--accent:#be123c; --visual-bg:#fff1f2;">
+                        <div class="project-visual">
+                            <div class="mini-dashboard">
+                                <div class="mini-left">
+                                    <div class="mini-kpi"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                    <div class="mini-line"></div>
+                                </div>
+                                <div class="mini-right">
+                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta"><span class="pill">Repo public</span><span class="pill">EDA / Storytelling</span></div>
+                            <h3>Analyse exploratoire des données Netflix</h3>
+                            <p>Exploration d'un catalogue streaming pour comprendre les genres, pays, formats et tendances de publication.</p>
+                            <div class="project-proof">
+                                <div class="proof-item"><strong>EDA</strong><span>complet</span></div>
+                                <div class="proof-item"><strong>Insight</strong><span>marché</span></div>
+                            </div>
+                            <div class="project-stack"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Seaborn</span><span class="tag">Storytelling</span></div>
+                            <div class="project-actions">
+                                <button class="btn secondary" data-modal="netflix">Étude de cas</button>
+                                <a class="btn ghost" href="https://github.com/MousBak/Analyse-exploratoire-des-donn-es-Netflix" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a>
                             </div>
                         </div>
                     </article>
@@ -2119,6 +2179,16 @@
                     ["Impact recruteur", "Projet central pour un poste BI Analyst : qualité du modèle, clarté visuelle, automatisation du reporting et vision métier."]
                 ]
             },
+            budget: {
+                eyebrow: "BI · Finance personnelle",
+                title: "Budget de consommation annuel avec Power BI",
+                repo: "https://github.com/MousBak/Consommation-du-Budget-Power-bi",
+                blocks: [
+                    ["Contexte", "Des relevés de dépenses doivent être transformés en lecture claire : catégories, évolution dans le temps et postes qui pèsent le plus sur le budget."],
+                    ["Actions", "Structuration des données, nettoyage Power Query, classification des dépenses, KPIs de suivi et dashboard interactif pour analyser les variations mensuelles."],
+                    ["Impact recruteur", "Montre une compétence très concrète en BI : rendre un fichier brut lisible, modéliser les indicateurs et aider à décider où agir."]
+                ]
+            },
             datamart: {
                 eyebrow: "Analytics Engineering · BI",
                 title: "Modélisation d'un Data Mart Ventes",
@@ -2185,6 +2255,16 @@
                     ["Contexte", "Un historique volumineux d'incidents doit être exploré pour comprendre les tendances temporelles et géographiques."],
                     ["Actions", "Traitement PySpark, agrégations par type de délit, période et zone, puis cartographie des hotspots avec Folium."],
                     ["Impact recruteur", "Montre la capacité à dépasser Excel pour traiter de grands volumes, analyser et restituer spatialement."]
+                ]
+            },
+            netflix: {
+                eyebrow: "EDA · Analyse de marché",
+                title: "Analyse exploratoire des données Netflix",
+                repo: "https://github.com/MousBak/Analyse-exploratoire-des-donn-es-Netflix",
+                blocks: [
+                    ["Contexte", "Un acteur du streaming veut comprendre la structure d'un catalogue : types de contenus, pays, genres, durées et évolution des publications."],
+                    ["Actions", "Nettoyage du dataset, analyse descriptive, visualisations Python, lecture des tendances par période et synthèse des enseignements business."],
+                    ["Impact recruteur", "Projet efficace pour juger la base d'un Data Analyst : EDA propre, graphiques utiles, interprétation métier et restitution claire."]
                 ]
             },
             stock: {
