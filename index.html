@@ -51,6 +51,7 @@
             background: var(--bg);
             color: var(--ink);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         body.menu-open {
@@ -133,6 +134,7 @@
             align-items: center;
             justify-content: center;
             gap: 9px;
+            min-width: 0;
             min-height: 44px;
             padding: 0 16px;
             border: 1px solid transparent;
@@ -311,6 +313,8 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            max-width: 100%;
+            min-width: 0;
             padding: 8px 10px;
             background: #fff;
             border: 1px solid var(--line);
@@ -318,6 +322,7 @@
             color: var(--muted);
             font-size: 0.83rem;
             font-weight: 750;
+            overflow-wrap: break-word;
         }
 
         .profile-panel {
@@ -349,12 +354,14 @@
         .profile-top h2 {
             margin: 0;
             font-size: 1.25rem;
+            overflow-wrap: break-word;
         }
 
         .profile-top p {
             margin: 4px 0 0;
             color: var(--muted);
             font-size: 0.9rem;
+            overflow-wrap: break-word;
         }
 
         .profile-list {
@@ -365,11 +372,17 @@
 
         .profile-item {
             display: grid;
-            grid-template-columns: 26px 1fr;
+            grid-template-columns: 26px minmax(0, 1fr);
             gap: 10px;
             align-items: start;
             color: var(--muted);
             font-size: 0.9rem;
+        }
+
+        .profile-item span,
+        .profile-item a {
+            min-width: 0;
+            overflow-wrap: anywhere;
         }
 
         .profile-item i {
@@ -388,6 +401,8 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            max-width: 100%;
+            min-width: 0;
             padding: 6px 9px;
             border-radius: 7px;
             background: #eef6f4;
@@ -395,6 +410,7 @@
             border: 1px solid #cfe3de;
             font-size: 0.76rem;
             font-weight: 800;
+            overflow-wrap: break-word;
         }
 
         .signal-grid {
@@ -628,6 +644,24 @@
             padding: 16px;
             background: var(--visual-bg, #eef6f4);
             border-bottom: 1px solid var(--line);
+        }
+
+        .project-visual.has-shot {
+            min-height: 154px;
+            padding: 0;
+            background: #f8fafc;
+        }
+
+        .project-visual.has-shot img {
+            display: block;
+            width: 100%;
+            height: 154px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .project-visual.has-shot.top img {
+            object-position: top;
         }
 
         .mini-dashboard {
@@ -1173,10 +1207,52 @@
         }
 
         @media (max-width: 520px) {
+            .hero h1 {
+                font-size: clamp(2rem, 9.2vw, 2.55rem);
+            }
+
+            .hero-actions {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
             .hero-actions .btn,
             .contact-actions .btn,
             .project-actions .btn {
                 width: 100%;
+                white-space: normal;
+                text-align: center;
+            }
+
+            .hero-meta {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .meta-chip {
+                align-items: flex-start;
+            }
+
+            .profile-top {
+                grid-template-columns: 64px minmax(0, 1fr);
+                gap: 12px;
+            }
+
+            .avatar {
+                width: 64px;
+                height: 64px;
+            }
+
+            .profile-list {
+                padding: 16px 18px 20px;
+            }
+
+            .profile-item {
+                grid-template-columns: 22px minmax(0, 1fr);
+            }
+
+            .stack-row {
+                padding-inline: 18px;
             }
 
             .project-proof {
@@ -1386,7 +1462,7 @@
 
                     <article class="featured-card">
                         <div class="featured-media">
-                            <img src="assets/preview-powerbi-ventes.png" alt="Aperçu du rapport Power BI ventes et budget">
+                            <img src="assets/canva/powerbi-ventes.jpg" alt="Aperçu d'un dashboard Power BI de suivi des ventes">
                         </div>
                         <div class="featured-body">
                             <span class="pill">Business Intelligence</span>
@@ -1417,7 +1493,7 @@
 
                     <article class="featured-card">
                         <div class="featured-media">
-                            <img src="assets/preview-segmentation-clients.png" alt="Aperçu du rapport de segmentation clients K-Means et RFM">
+                            <img src="assets/canva/segmentation-clusters.jpg" alt="Aperçu d'une segmentation clients visualisée avec ACP">
                         </div>
                         <div class="featured-body">
                             <span class="pill">Marketing Analytics</span>
@@ -1501,18 +1577,8 @@
                     </article>
 
                     <article class="project-card" data-category="bi analytics" style="--accent:#0f766e; --visual-bg:#e9f8f5;">
-                        <div class="project-visual">
-                            <div class="mini-dashboard">
-                                <div class="mini-left">
-                                    <div class="mini-kpi"></div>
-                                    <div class="mini-line"></div>
-                                    <div class="mini-line"></div>
-                                    <div class="mini-line"></div>
-                                </div>
-                                <div class="mini-right">
-                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
-                                </div>
-                            </div>
+                        <div class="project-visual has-shot top">
+                            <img src="assets/canva/powerbi-ventes.jpg" alt="Aperçu du dashboard Power BI ventes">
                         </div>
                         <div class="project-body">
                             <div class="project-meta"><span class="pill">Repo public</span><span class="pill">Business Intelligence</span></div>
@@ -1531,18 +1597,8 @@
                     </article>
 
                     <article class="project-card" data-category="bi analytics" style="--accent:#0369a1; --visual-bg:#f0f9ff;">
-                        <div class="project-visual">
-                            <div class="mini-dashboard">
-                                <div class="mini-left">
-                                    <div class="mini-kpi"></div>
-                                    <div class="mini-line"></div>
-                                    <div class="mini-line"></div>
-                                    <div class="mini-line"></div>
-                                </div>
-                                <div class="mini-right">
-                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
-                                </div>
-                            </div>
+                        <div class="project-visual has-shot">
+                            <img src="assets/canva/powerbi-budget.jpg" alt="Aperçu du dashboard Power BI budget">
                         </div>
                         <div class="project-body">
                             <div class="project-meta"><span class="pill">Repo public</span><span class="pill">Power BI</span></div>
@@ -1619,18 +1675,8 @@
                     </article>
 
                     <article class="project-card" data-category="marketing ml analytics" style="--accent:#7c3aed; --visual-bg:#f5f3ff;">
-                        <div class="project-visual">
-                            <div class="mini-dashboard">
-                                <div class="mini-left">
-                                    <div class="mini-kpi"></div>
-                                    <div class="mini-line"></div>
-                                    <div class="mini-line"></div>
-                                    <div class="mini-line"></div>
-                                </div>
-                                <div class="mini-right">
-                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
-                                </div>
-                            </div>
+                        <div class="project-visual has-shot">
+                            <img src="assets/canva/segmentation-clusters.jpg" alt="Visualisation ACP des clusters clients">
                         </div>
                         <div class="project-body">
                             <div class="project-meta"><span class="pill">Repo public</span><span class="pill">CRM / Marketing</span></div>
@@ -1649,18 +1695,8 @@
                     </article>
 
                     <article class="project-card" data-category="ml marketing" style="--accent:#db2777; --visual-bg:#fdf2f8;">
-                        <div class="project-visual">
-                            <div class="mini-dashboard">
-                                <div class="mini-left">
-                                    <div class="mini-kpi"></div>
-                                    <div class="mini-line"></div>
-                                    <div class="mini-line"></div>
-                                    <div class="mini-line"></div>
-                                </div>
-                                <div class="mini-right">
-                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
-                                </div>
-                            </div>
+                        <div class="project-visual has-shot top">
+                            <img src="assets/canva/recommandation-films.jpg" alt="Interface Streamlit de recommandation de films">
                         </div>
                         <div class="project-body">
                             <div class="project-meta"><span class="pill">Repo public</span><span class="pill">Recommandation</span></div>
@@ -1679,18 +1715,8 @@
                     </article>
 
                     <article class="project-card" data-category="ml analytics" style="--accent:#0891b2; --visual-bg:#ecfeff;">
-                        <div class="project-visual">
-                            <div class="mini-dashboard">
-                                <div class="mini-left">
-                                    <div class="mini-kpi"></div>
-                                    <div class="mini-line"></div>
-                                    <div class="mini-line"></div>
-                                    <div class="mini-line"></div>
-                                </div>
-                                <div class="mini-right">
-                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
-                                </div>
-                            </div>
+                        <div class="project-visual has-shot">
+                            <img src="assets/canva/forecast-prophet.jpg" alt="Graphique de prévision Prophet des prix d'actions">
                         </div>
                         <div class="project-body">
                             <div class="project-meta"><span class="pill">Repo public</span><span class="pill">Time Series</span></div>
@@ -1739,18 +1765,8 @@
                     </article>
 
                     <article class="project-card" data-category="engineering analytics" style="--accent:#475569; --visual-bg:#f1f5f9;">
-                        <div class="project-visual">
-                            <div class="mini-dashboard">
-                                <div class="mini-left">
-                                    <div class="mini-kpi"></div>
-                                    <div class="mini-line"></div>
-                                    <div class="mini-line"></div>
-                                    <div class="mini-line"></div>
-                                </div>
-                                <div class="mini-right">
-                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
-                                </div>
-                            </div>
+                        <div class="project-visual has-shot">
+                            <img src="assets/canva/chicago-big-data.jpg" alt="Visuel d'analyse des données de criminalité à Chicago">
                         </div>
                         <div class="project-body">
                             <div class="project-meta"><span class="pill">Repo public</span><span class="pill">Big Data</span></div>
@@ -1769,18 +1785,8 @@
                     </article>
 
                     <article class="project-card" data-category="analytics marketing" style="--accent:#be123c; --visual-bg:#fff1f2;">
-                        <div class="project-visual">
-                            <div class="mini-dashboard">
-                                <div class="mini-left">
-                                    <div class="mini-kpi"></div>
-                                    <div class="mini-line"></div>
-                                    <div class="mini-line"></div>
-                                    <div class="mini-line"></div>
-                                </div>
-                                <div class="mini-right">
-                                    <div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div>
-                                </div>
-                            </div>
+                        <div class="project-visual has-shot">
+                            <img src="assets/canva/netflix-eda.jpg" alt="Nuage de mots du projet d'analyse exploratoire Netflix">
                         </div>
                         <div class="project-body">
                             <div class="project-meta"><span class="pill">Repo public</span><span class="pill">EDA / Storytelling</span></div>
