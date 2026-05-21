@@ -455,6 +455,127 @@
             font-size: 0.88rem;
         }
 
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .featured-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .featured-media {
+            height: 220px;
+            background: #eef6f4;
+            border-bottom: 1px solid var(--line);
+            overflow: hidden;
+        }
+
+        .featured-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .featured-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .featured-body h3 {
+            margin: 10px 0 8px;
+            font-size: 1.18rem;
+            line-height: 1.25;
+        }
+
+        .featured-body p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .featured-proof {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .featured-proof span {
+            padding: 10px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: #fbfdfc;
+            color: var(--muted);
+            font-size: 0.76rem;
+            font-weight: 800;
+        }
+
+        .featured-proof strong {
+            display: block;
+            color: var(--teal-dark);
+            font-size: 1.1rem;
+            line-height: 1.1;
+            margin-bottom: 4px;
+        }
+
+        .featured-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: auto;
+        }
+
+        .featured-actions .btn {
+            min-height: 40px;
+            font-size: 0.82rem;
+        }
+
+        .recruiter-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .recruiter-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            padding: 18px;
+        }
+
+        .recruiter-card i {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: var(--radius);
+            background: var(--surface-soft);
+            color: var(--teal);
+            margin-bottom: 14px;
+        }
+
+        .recruiter-card h3 {
+            margin: 0 0 8px;
+            font-size: 1rem;
+        }
+
+        .recruiter-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
         .filter-bar {
             display: flex;
             flex-wrap: wrap;
@@ -970,6 +1091,11 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .featured-grid,
+            .recruiter-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .projects-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1029,6 +1155,8 @@
             }
 
             .role-grid,
+            .featured-grid,
+            .recruiter-grid,
             .projects-grid,
             .method-grid,
             .signal-grid {
@@ -1067,6 +1195,7 @@
 
             <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
                 <a href="#profil">Profil</a>
+                <a href="#preuves">Preuves</a>
                 <a href="#projets">Projets</a>
                 <a href="#competences">Compétences</a>
                 <a href="#approche">Approche</a>
@@ -1101,6 +1230,10 @@
                             <a class="btn primary" href="#projets">
                                 Voir les projets recruteur
                                 <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a class="btn secondary" href="mailto:moussabakayoko098@gmail.com?subject=Demande%20de%20CV%20-%20Bakayoko%20Moussa">
+                                <i class="fa-solid fa-file-lines"></i>
+                                Demander mon CV
                             </a>
                             <a class="btn secondary" href="https://www.linkedin.com/in/moussa-bakayoko-3b1946152/" target="_blank" rel="noopener">
                                 <i class="fa-brands fa-linkedin"></i>
@@ -1203,6 +1336,114 @@
                         <i class="fa-solid fa-diagram-project"></i>
                         <h3>Analytics Engineer Jr</h3>
                         <p>ETL/ELT, qualité des données, documentation, modèles analytiques et automatisation.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="preuves">
+            <div class="shell">
+                <div class="section-head">
+                    <p class="eyebrow">Preuves visibles</p>
+                    <h2 class="section-title">Les 3 projets à ouvrir en premier si vous recrutez un profil data.</h2>
+                    <p class="section-copy">
+                        Ces projets montrent ce qui intéresse le plus un recruteur : impact métier, volume traité,
+                        livrables documentés et capacité à passer de la donnée brute à une décision.
+                    </p>
+                </div>
+
+                <div class="featured-grid">
+                    <article class="featured-card">
+                        <div class="featured-media">
+                            <img src="assets/preview-audit-data-quality.png" alt="Aperçu du rapport d'audit et automatisation Excel Data Quality">
+                        </div>
+                        <div class="featured-body">
+                            <span class="pill private">Cas entreprise</span>
+                            <h3>Audit & automatisation d'un tableau de bord critique</h3>
+                            <p>
+                                Audit complet d'un outil Excel de suivi opérationnel, correction des anomalies
+                                et automatisation du reporting pour fiabiliser la décision métier.
+                            </p>
+                            <div class="featured-proof">
+                                <span><strong>90K</strong>formules analysées</span>
+                                <span><strong>9 650</strong>dossiers pilotés</span>
+                            </div>
+                            <div class="project-stack">
+                                <span class="tag">Excel</span>
+                                <span class="tag">VBA</span>
+                                <span class="tag">Data Quality</span>
+                                <span class="tag">Reporting</span>
+                            </div>
+                            <div class="featured-actions">
+                                <button class="btn secondary" data-modal="audit">Étude de cas</button>
+                                <a class="btn ghost" href="https://github.com/MousBak/Rapports/blob/main/Projet_CV_DataAnalyste_MPC%20(3).pdf" target="_blank" rel="noopener">
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                    Rapport
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="featured-card">
+                        <div class="featured-media">
+                            <img src="assets/preview-powerbi-ventes.png" alt="Aperçu du rapport Power BI ventes et budget">
+                        </div>
+                        <div class="featured-body">
+                            <span class="pill">Business Intelligence</span>
+                            <h3>Dashboard Power BI ventes & budget</h3>
+                            <p>
+                                Conception d'un système de pilotage commercial et budgétaire pour centraliser
+                                les KPIs, réduire les reportings manuels et accélérer la lecture directionnelle.
+                            </p>
+                            <div class="featured-proof">
+                                <span><strong>4-6h</strong>reporting évité / semaine</span>
+                                <span><strong>DAX</strong>KPIs métier</span>
+                            </div>
+                            <div class="project-stack">
+                                <span class="tag">Power BI</span>
+                                <span class="tag">DAX</span>
+                                <span class="tag">Star Schema</span>
+                                <span class="tag">Power Query</span>
+                            </div>
+                            <div class="featured-actions">
+                                <button class="btn secondary" data-modal="sales">Étude de cas</button>
+                                <a class="btn ghost" href="https://github.com/MousBak/Rapports/blob/main/Rapport_Dashboard_PowerBI_Ventes.docx.pdf" target="_blank" rel="noopener">
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                    Rapport
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="featured-card">
+                        <div class="featured-media">
+                            <img src="assets/preview-segmentation-clients.png" alt="Aperçu du rapport de segmentation clients K-Means et RFM">
+                        </div>
+                        <div class="featured-body">
+                            <span class="pill">Marketing Analytics</span>
+                            <h3>Segmentation clients RFM & K-Means</h3>
+                            <p>
+                                Transformation d'une base clients en segments actionnables pour prioriser
+                                les campagnes, personnaliser les messages et mieux allouer le budget marketing.
+                            </p>
+                            <div class="featured-proof">
+                                <span><strong>4</strong>segments clients</span>
+                                <span><strong>RFM</strong>scoring actionnable</span>
+                            </div>
+                            <div class="project-stack">
+                                <span class="tag">Python</span>
+                                <span class="tag">K-Means</span>
+                                <span class="tag">PCA</span>
+                                <span class="tag">CRM</span>
+                            </div>
+                            <div class="featured-actions">
+                                <button class="btn secondary" data-modal="segmentation">Étude de cas</button>
+                                <a class="btn ghost" href="https://github.com/MousBak/Rapports/blob/main/Rapport_Segmentation_Clients_KMeans.docx.pdf" target="_blank" rel="noopener">
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                    Rapport
+                                </a>
+                            </div>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -1697,6 +1938,42 @@
             </div>
         </section>
 
+        <section class="section alt" id="impact">
+            <div class="shell">
+                <div class="section-head">
+                    <p class="eyebrow">Dès le premier mois</p>
+                    <h2 class="section-title">Ce que je peux apporter rapidement à une équipe data.</h2>
+                    <p class="section-copy">
+                        L'objectif est simple : arriver, comprendre les priorités métier, sécuriser les données
+                        et livrer des analyses utiles sans attendre plusieurs mois.
+                    </p>
+                </div>
+
+                <div class="recruiter-grid">
+                    <article class="recruiter-card">
+                        <i class="fa-solid fa-broom"></i>
+                        <h3>Fiabiliser une base</h3>
+                        <p>Détecter doublons, valeurs manquantes, erreurs de format et incohérences qui faussent les KPIs.</p>
+                    </article>
+                    <article class="recruiter-card">
+                        <i class="fa-solid fa-chart-column"></i>
+                        <h3>Automatiser un reporting</h3>
+                        <p>Transformer un fichier Excel ou un suivi manuel en dashboard Power BI clair et réutilisable.</p>
+                    </article>
+                    <article class="recruiter-card">
+                        <i class="fa-solid fa-code-branch"></i>
+                        <h3>Structurer les KPIs</h3>
+                        <p>Clarifier les définitions métier, documenter les règles de calcul et rendre les indicateurs fiables.</p>
+                    </article>
+                    <article class="recruiter-card">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <h3>Produire des insights</h3>
+                        <p>Analyser ventes, churn, CRM, stocks ou campagnes pour recommander des actions concrètes.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section class="section alt" id="apropos">
             <div class="shell">
                 <div class="section-head">
@@ -1759,6 +2036,10 @@
                             <i class="fa-solid fa-phone"></i>
                             07 66 35 40 50
                         </a>
+                        <a class="btn secondary" href="mailto:moussabakayoko098@gmail.com?subject=Demande%20de%20CV%20-%20Bakayoko%20Moussa">
+                            <i class="fa-solid fa-file-lines"></i>
+                            Demander mon CV
+                        </a>
                     </div>
                 </div>
 
@@ -1809,6 +2090,16 @@
 
     <script>
         const caseStudies = {
+            audit: {
+                eyebrow: "Data Quality · Automatisation",
+                title: "Audit & automatisation d'un tableau de bord critique",
+                repo: "https://github.com/MousBak/Rapports/blob/main/Projet_CV_DataAnalyste_MPC%20(3).pdf",
+                blocks: [
+                    ["Contexte", "Un outil Excel de suivi opérationnel pilotait plusieurs milliers de dossiers, avec une logique métier encodée dans de nombreuses colonnes et formules en cascade."],
+                    ["Actions", "Cartographie des dépendances, audit des formules, correction des erreurs critiques, nettoyage des incohérences de saisie et automatisation du reporting."],
+                    ["Impact recruteur", "C'est le type de projet qui parle fortement aux entreprises : fiabilisation d'un outil existant, gain de temps, réduction du risque d'erreur et documentation du processus."]
+                ]
+            },
             churn: {
                 eyebrow: "Data Analytics · Churn",
                 title: "Analyse de l'attrition client",
